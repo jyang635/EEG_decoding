@@ -6,4 +6,5 @@ _pycache_
 *.pt
 *.txt
 *.png
+*.ipynb
 wandb
