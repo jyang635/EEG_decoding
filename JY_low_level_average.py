@@ -1,0 +1,290 @@
+import os
+import torch
+import torch.nn as nn
+import numpy as np
+from torch.utils.data import DataLoader
+import wandb
+
+import copy
+import re
+from torch.utils.data import DataLoader
+
+# from diffusers.utils import load_image
+from IPython.display import display
+# from diffusers.image_processor import VaeImageProcessor
+# from diffusers import AutoencoderKL
+# from diffusers.pipelines.stable_diffusion_xl.pipeline_stable_diffusion_xl import *
+
+import argparse
+import datetime
+
+from JY_low_level_encoders import Deconv_EEGConformer,encoder_low_level,encoder_low_level_channelwise,ATMS_Deconv,Config
+from JY_ThingsData import load_multiple_subjects
+
+os.environ["WANDB_MODE"] = 'online'
+# image_processor = VaeImageProcessor()
+# path = "stabilityai/stable-diffusion-xl-base-1.0"
+
+# vae = AutoencoderKL.from_pretrained(path, subfolder='vae').to(device)
+# device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
+# pipe = DiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float, variant="fp16")
+
+
+# if hasattr(pipe, 'vae'):
+#     for param in pipe.vae.parameters():
+#         param.requires_grad = False
+
+# vae = pipe.vae.to('cuda:1')
+
+
+# vae.requires_grad_(False)
+# vae.eval()
+
+def extract_id_from_string(s):
+    match = re.search(r'\d+$', s)
+    if match:
+        return int(match.group())
+    return None
+
+
+def train_loop(dataloader, model, loss_fn, optimizer,device,subject_id=None,model_type='EEGconformer'):
+    # Set the model to training mode - important for batch normalization and dropout layers
+    # Unnecessary in this situation but added for best practices
+
+    model.train()
+    train_loss=0
+    if model_type == 'ATMS':
+        for batch, (image,response)in enumerate(dataloader):
+            image=image.to(device)
+            subject_ids = extract_id_from_string(subject_id)
+            eeg_tensor= response.to(device)
+            batch_size =eeg_tensor.size(0)
+            subject_ids = torch.full((batch_size,), subject_ids, dtype=torch.long).to(device)
+            pred = model(eeg_tensor,subject_ids)
+            loss = loss_fn(pred, image)
+            train_loss += loss.item()
+            # Backpropagation
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+    else:
+        for batch, (image,response)in enumerate(dataloader):
+            image=image.to(device)
+            pred = model(response.to(device))
+            loss = loss_fn(pred, image)
+            train_loss += loss.item()
+            # Backpropagation
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+
+
+    num_batches = len(dataloader)
+    train_loss /= num_batches
+    return train_loss
+
+def val_loop(dataloader, model, loss_fn,device,subject_id=None,model_type='EEGconformer'):
+    # Set the model to evaluation mode - important for batch normalization and dropout layers
+    # Unnecessary in this situation but added for best practices
+    model.eval()
+    num_batches = len(dataloader)
+    val_loss = 0
+
+    # Evaluating the model with torch.no_grad() ensures that no gradients are computed during test mode
+    # also serves to reduce unnecessary gradient computations and memory usage for tensors with requires_grad=True
+    with torch.no_grad():
+        if model_type == 'ATMS':
+            for batch, (image,response)in enumerate(dataloader):
+                image=image.to(device)
+                subject_ids = extract_id_from_string(subject_id)
+                eeg_tensor= response.to(device)
+                batch_size =eeg_tensor.size(0)
+                subject_ids = torch.full((batch_size,), subject_ids, dtype=torch.long).to(device)
+                pred = model(eeg_tensor,subject_ids)
+                loss = loss_fn(pred, image)          
+                val_loss += loss.item()
+        else:
+            for batch, (image,response)in enumerate(dataloader):
+                image=image.to(device)
+                pred = model(response.to(device))
+                loss = loss_fn(pred, image)          
+                val_loss += loss.item()
+            
+    # ssim_loss /= num_batches
+    val_loss /= num_batches
+    print(f"Validation loss: {val_loss:>8f} \n")
+    return val_loss
+
+def main_train_loop(eeg_model, train_dataloader, validation_dataloader, device, 
+                     config,n_channels,model_type='EEGconformer'):
+    optimizer = torch.optim.AdamW(eeg_model.parameters(),lr=config['learning_rate'],weight_decay=config['weight_decay'])
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min')
+    best_val_loss = float('inf')
+    valloss_monitor = 0
+    subject_ids = config['subject_id']
+    sub = '_'.join(subject_ids)
+
+    loss_dict = {
+        'mse': nn.MSELoss(),
+        'mae': nn.L1Loss()
+    }
+    loss_fn = loss_dict.get(config['loss'], nn.MSELoss())
+    if config['loss'] not in loss_dict.keys():
+        print(f"Warning: '{config['loss']}' is not a valid loss function key. Defaulting to 'mse'.")
+    else:
+        print(f"Using loss function: {config['loss']}")
+    for t in range(config['epochs']):
+        print(f"Epoch {t+1}\n-------------------------------")
+        train_loss = train_loop(train_dataloader, eeg_model, loss_fn, optimizer,device=device,subject_id=subject_ids[0],model_type=model_type)
+        print('Train loss= '+str(round(train_loss, 5)))
+        val_loss = val_loop(validation_dataloader, eeg_model, loss_fn,device=device,subject_id=subject_ids[0],model_type=model_type)
+        
+        # Log metrics to wandb
+        wandb.log({
+            "epoch": t+1,
+            "train_loss": train_loss,
+            "val_loss": val_loss,
+            "learning_rate": scheduler.get_last_lr()[0]
+        })
+        
+        
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            best_model_check = copy.deepcopy(eeg_model.state_dict())        # Copy the best model
+            valloss_monitor = 0
+            
+            # Log best model checkpoint to wandb
+            wandb.run.summary["best_val_loss"] = best_val_loss
+            wandb.run.summary["best_epoch"] = t+1
+            best_epoch = t+1
+
+            # wandb.save(model_path)
+        else:
+            valloss_monitor += 1
+            
+        if valloss_monitor > config['early_stopping_patience']:
+            print('Overfitting!')
+            # break
+            
+        scheduler.step(val_loss)
+        lr = scheduler.get_last_lr()[0]
+        print('Learning rate='+str(lr))
+    # Save the model weights
+    model_path=f"./models/low_level/{config['model_type']}/{sub}/C{n_channels}-{config['time_window'][1]}s-avg{config['average_eeg']}"
+    os.makedirs(model_path, exist_ok=True)             
+    file_path = f"{model_path}/best_model_epoch{best_epoch}.pth"
+    torch.save(best_model_check, file_path)
+    file_path = f"{model_path}/model_{config['epochs']}.pth"
+    torch.save(eeg_model.state_dict(), file_path)
+    print(f"model saved in {file_path}!")
+    wandb.finish()
+
+def main():
+    # Argument parser setup
+    parser = argparse.ArgumentParser(description='Conformer+deconv')
+    
+    # Add your command-line arguments
+    parser.add_argument('--eeg_folder', type=str, default='/home/yjk122/IP_temp/EEG_Image_decode/Preprocessed_data_250Hz')
+    parser.add_argument('--img_folder', type=str, default='/home/yjk122/IP_temp/ThingsEEG/image')
+    parser.add_argument('--subject_id', type=str, default='sub-01', help='Subject ID to analyze')
+    parser.add_argument('--start_time', type=float, default=0.0, help='Start time for analysis window')
+    parser.add_argument('--end_time', type=float, default=0.5, help='End time for analysis window')
+    parser.add_argument('--batch_size', type=int, default=200, help='Batch size for training')
+    parser.add_argument('--model', type=str,choices=['encoder_low_level', 'encoder_low_level_channelwise', 'EEGConformer','ATMS'], default='EEGConformer')
+    parser.add_argument('--learning_rate', type=float, default=5e-5, help='Learning rate')
+    parser.add_argument('--weight_decay', type=float, default=5e-5, help='Weight decay')
+    parser.add_argument('--epochs', type=int, default=40, help='Number of training epochs')
+    parser.add_argument('--early_stopping', type=int, default=10, help='Early stopping patience')
+    parser.add_argument('--project', type=str, default='ATM_lowlevel', help='W&B project name')
+    parser.add_argument('--seed', type=int, default=1, help='Random seed')
+    parser.add_argument('--loss', type=str, default='mse', help='loss function to use')
+    parser.add_argument('--channels', type=str, default='O1,Oz,O2', 
+                        help='EEG channels to use (comma-separated)')
+    parser.add_argument('--image_size', type=str, default="256,256", help='size of the image'),
+    parser.add_argument('--gpu', type=str, default='0', help='GPU to use')
+    parser.add_argument('--average_eeg', action='store_true', help='Whether to average EEG data')
+    parser.add_argument('--latent_mapping', default='VAE', help='Whether to use latent mapping')
+    
+    args = parser.parse_args()
+    # Initialize wandb
+    current_time = datetime.datetime.now().strftime("%m-%d_%H-%M")
+
+    device = torch.device(f"cuda:{args.gpu}" if torch.cuda.is_available() else "cpu")
+    print(f"Using {device} device")
+    image_size = args.image_size.split(',')
+    image_size = (3,int(image_size[0]), int(image_size[1]))
+    config = {
+                "eeg_folder": args.eeg_folder,
+                "img_folder": args.img_folder,
+                'project': args.project,
+                "model_type": args.model,
+                "subject_id": args.subject_id.split(','),
+                "time_window": [args.start_time, args.end_time],
+                "channels": args.channels.split(','),
+                "batch_size": args.batch_size,
+                "learning_rate": args.learning_rate,
+                "weight_decay": args.weight_decay,
+                "epochs": args.epochs,
+                "image_size": image_size,
+                "early_stopping_patience": args.early_stopping,
+                "seed": args.seed,
+                "loss": args.loss,
+                'average_eeg': args.average_eeg,
+                "latent_mapping": args.latent_mapping,
+                "device": device
+            }
+    # Add this before your training loop
+    # print(f"Config: {config['average_eeg']}")
+
+    
+
+    
+    EEG_dir = config['eeg_folder']
+    img_dir = config['img_folder']
+    img_metadata = np.load(os.path.join(img_dir, 'image_metadata.npy'), allow_pickle=True).item()
+    train_d, validation_d,ntimes = load_multiple_subjects(subject_ids=config['subject_id'], eeg_dir=EEG_dir, img_dir=img_dir, 
+                                                    img_metadata=img_metadata, start_time=config['time_window'][0], 
+                                                    end_time=config['time_window'][1],desired_channels=config['channels'],
+                                                    image_size=(config['image_size'][1],config['image_size'][2]),compressor=config['latent_mapping'],training=True,average=config['average_eeg'])
+    train_dataloader = DataLoader(train_d, batch_size=config['batch_size'], shuffle=True)
+    validation_dataloader = DataLoader(validation_d, batch_size=config['batch_size'], shuffle=False)
+    # Set the random seed for reproducibility
+    torch.manual_seed(config['seed'])
+    np.random.seed(config['seed'])
+    # print(config['channels'])
+    if config['channels'][0] == 'All':
+        n_channels = len(train_d[0][1])
+    else:
+        n_channels = len(config['channels'])
+    if config['model_type'] == 'encoder_low_level':
+        eeg_model = encoder_low_level(num_channels=n_channels, sequence_length=ntimes).to(device)
+    elif config['model_type'] == 'EEGConformer':
+        eeg_model = Deconv_EEGConformer(n_outputs=2, n_chans=n_channels, n_filters_time=180, 
+                                  filter_time_length=20, pool_time_length=5, pool_time_stride=5, 
+                                  drop_prob=0.5, att_depth=3, att_heads=30, att_drop_prob=0.5, 
+                                  final_fc_length='auto', return_features=False, n_times=ntimes, 
+                                  chs_info=None, input_window_seconds=None, sfreq=None, n_classes=None, 
+                                  n_channels=None, input_window_samples=None).to(device)
+    elif config['model_type'] == 'encoder_low_level_channelwise':
+        eeg_model = encoder_low_level(num_channels=n_channels, sequence_length=ntimes).to(device)
+    elif config['model_type'] == 'ATMS':
+        ATM_config = Config(seq_len=ntimes,ATMoutput=1024)
+        eeg_model=ATMS_Deconv(ATM_config)
+        
+
+    def init_wandb(project_name=config['project'], run_name=None,config=config):
+        if run_name is None:
+            run_name = f"{config['model_type']}-C{n_channels}-{config['time_window'][1]}s-avg{config['average_eeg']}"
+        wandb.init(project=project_name, 
+                name=run_name, 
+                config=config)
+        
+        # Log model architecture as text
+        wandb.run.summary["model_architecture"] = config['model_type']
+        
+        return wandb.run
+
+    run = init_wandb(config=config)
+    main_train_loop(eeg_model, train_dataloader, validation_dataloader, device,config,n_channels,model_type=config['model_type'])
+if __name__ == '__main__':
+    main()

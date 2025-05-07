@@ -1,0 +1,8 @@
+{
+    "data_path": "/home/yjk122/IP_temp/EEG_Image_decode/Preprocessed_data_250Hz",
+    "img_directory_training": "/home/yjk122/IP_temp/ThingsEEG/image/training_images",
+    
+    "img_directory_test": "/home/yjk122/IP_temp/ThingsEEG/image/test_images",
+    "features_path":"/home/yjk122/IP_temp/ThingsEEG/CLIP"
+}
+
