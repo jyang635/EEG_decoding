@@ -2,7 +2,7 @@ fintune_ckpts
 models
 image_latents
 outputs
-__pycache_
+__pycache__
 *.pt
 *.txt
 *.png
