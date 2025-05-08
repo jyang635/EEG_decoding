@@ -7,10 +7,10 @@ import wandb
 
 import copy
 import re
-from torch.utils.data import DataLoader
+
 
 # from diffusers.utils import load_image
-from IPython.display import display
+
 # from diffusers.image_processor import VaeImageProcessor
 # from diffusers import AutoencoderKL
 # from diffusers.pipelines.stable_diffusion_xl.pipeline_stable_diffusion_xl import *
@@ -119,6 +119,7 @@ def main_train_loop(eeg_model, train_dataloader, validation_dataloader, device,
                      config,n_channels,model_type='EEGconformer'):
     optimizer = torch.optim.AdamW(eeg_model.parameters(),lr=config['learning_rate'],weight_decay=config['weight_decay'])
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min')
+    eeg_model.to(device)
     best_val_loss = float('inf')
     valloss_monitor = 0
     subject_ids = config['subject_id']
@@ -193,7 +194,7 @@ def main():
     parser.add_argument('--model', type=str,choices=['encoder_low_level', 'encoder_low_level_channelwise', 'EEGConformer','ATMS'], default='EEGConformer')
     parser.add_argument('--learning_rate', type=float, default=5e-5, help='Learning rate')
     parser.add_argument('--weight_decay', type=float, default=5e-5, help='Weight decay')
-    parser.add_argument('--epochs', type=int, default=40, help='Number of training epochs')
+    parser.add_argument('--epochs', type=int, default=50, help='Number of training epochs')
     parser.add_argument('--early_stopping', type=int, default=10, help='Early stopping patience')
     parser.add_argument('--project', type=str, default='ATM_lowlevel', help='W&B project name')
     parser.add_argument('--seed', type=int, default=1, help='Random seed')
@@ -201,7 +202,7 @@ def main():
     parser.add_argument('--channels', type=str, default='O1,Oz,O2', 
                         help='EEG channels to use (comma-separated)')
     parser.add_argument('--image_size', type=str, default="256,256", help='size of the image'),
-    parser.add_argument('--gpu', type=str, default='0', help='GPU to use')
+    parser.add_argument('--gpu', type=str, default='1', help='GPU to use')
     parser.add_argument('--average_eeg', action='store_true', help='Whether to average EEG data')
     parser.add_argument('--latent_mapping', default='VAE', help='Whether to use latent mapping')
     
@@ -233,11 +234,6 @@ def main():
                 "latent_mapping": args.latent_mapping,
                 "device": device
             }
-    # Add this before your training loop
-    # print(f"Config: {config['average_eeg']}")
-
-    
-
     
     EEG_dir = config['eeg_folder']
     img_dir = config['img_folder']
@@ -246,8 +242,10 @@ def main():
                                                     img_metadata=img_metadata, start_time=config['time_window'][0], 
                                                     end_time=config['time_window'][1],desired_channels=config['channels'],
                                                     image_size=(config['image_size'][1],config['image_size'][2]),compressor=config['latent_mapping'],training=True,average=config['average_eeg'])
+
     train_dataloader = DataLoader(train_d, batch_size=config['batch_size'], shuffle=True)
     validation_dataloader = DataLoader(validation_d, batch_size=config['batch_size'], shuffle=False)
+
     # Set the random seed for reproducibility
     torch.manual_seed(config['seed'])
     np.random.seed(config['seed'])
@@ -274,7 +272,7 @@ def main():
 
     def init_wandb(project_name=config['project'], run_name=None,config=config):
         if run_name is None:
-            run_name = f"{config['model_type']}-C{n_channels}-{config['time_window'][1]}s-avg{config['average_eeg']}"
+            run_name = f"{config['subject_id'][0]}-{config['model_type']}-C{n_channels}-{config['time_window'][1]}s-avg{config['average_eeg']}"
         wandb.init(project=project_name, 
                 name=run_name, 
                 config=config)
@@ -284,7 +282,15 @@ def main():
         
         return wandb.run
 
+    # exit()
     run = init_wandb(config=config)
     main_train_loop(eeg_model, train_dataloader, validation_dataloader, device,config,n_channels,model_type=config['model_type'])
 if __name__ == '__main__':
+        # Add this before your training loop
+    # print(f"Config: {config['average_eeg']}")
+    # gpu0_memory = torch.cuda.memory_allocated(0) / (1024 ** 3)
+    # gpu1_memory = torch.cuda.memory_allocated(1) / (1024 ** 3)
+    # print(f"GPU 0 memory usage: {gpu0_memory:.2f} GB")
+    # print(f"GPU 1 memory usage: {gpu1_memory:.2f} GB")
     main()
+    torch.cuda.empty_cache()

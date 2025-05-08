@@ -336,41 +336,7 @@ class Pipe:
             loss_epoch = loss_sum / len(dataloader)
             print(f'epoch: {epoch}, loss: {loss_epoch}')
             # lr_scheduler.step(loss)
-    def evaluation(self, dataloader):
-        self.diffusion_prior.eval()
-        device = self.device
-        criterion = nn.MSELoss(reduction='none')
-        loss_sum = 0
-        with torch.no_grad():
-            for batch in dataloader:
-                c_embeds = batch['c_embedding'].to(device) if 'c_embedding' in batch.keys() else None
-                h_embeds = batch['h_embedding'].to(device)
-                N = h_embeds.shape[0]
 
-                # 1. randomly replecing c_embeds to None
-                if torch.rand(1) < 0.1:
-                    c_embeds = None
-
-                # 2. Generate noisy embeddings as input
-                noise = torch.randn_like(h_embeds)
-
-                # 3. sample timestep
-                timesteps = torch.randint(0, self.scheduler.config.num_train_timesteps, (N,), device=device)
-
-                # 4. add noise to h_embedding
-                perturbed_h_embeds = self.scheduler.add_noise(
-                    h_embeds,
-                    noise,
-                    timesteps
-                )
-                # 5. predict noise
-                noise_pre = self.diffusion_prior(perturbed_h_embeds, timesteps, c_embeds)
-                # 6. loss function weighted by sigma
-                loss = criterion(noise_pre, noise) # (batch_size,)
-                loss = (loss).mean()
-                loss_sum += loss.item()
-        loss_epoch = loss_sum / len(dataloader)
-        return loss_epoch
 
     def generate(
             self, 

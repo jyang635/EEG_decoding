@@ -128,18 +128,18 @@ def load_multiple_subjects(subject_ids,eeg_dir, img_dir,img_metadata, desired_ch
     
     if compressor == 'VAE':
         if training:
-            image_latent=torch.load(os.path.join(img_dir, 'train_image_latent_512.pt'))['image_latent']
+            image_latent=torch.load(os.path.join(img_dir, 'train_image_latent_512.pt'),map_location='cpu')['image_latent']
             image_latent=image_latent[:num_images,:,:,:]
         else:
-            image_latent=torch.load(os.path.join(img_dir, 'test_image_latent_512.pt'))['image_latent']
+            image_latent=torch.load(os.path.join(img_dir, 'test_image_latent_512.pt'),map_location='cpu')['image_latent']
         
         dataset = Latent_ImageDataset(image_latent, all_eeg_data,eeg_index,nrep)
     elif compressor == 'CLIP':
         if training:
-            image_latent=torch.load(os.path.join(img_dir, 'ViT-H-14_features_train.pt'))['img_features']
+            image_latent=torch.load(os.path.join(img_dir, 'ViT-H-14_features_train.pt'),map_location='cpu')['img_features']
             image_latent=image_latent[:num_images,:]
         else:
-            image_latent=torch.load(os.path.join(img_dir, 'ViT-H-14_features_test.pt'))['img_features']
+            image_latent=torch.load(os.path.join(img_dir, 'ViT-H-14_features_test.pt'),map_location='cpu')['img_features']
         
         dataset = Latent_ImageDataset(image_latent, all_eeg_data,eeg_index,nrep)
 

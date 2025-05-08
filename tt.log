@@ -1,0 +1,1025 @@
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'n_filters_time' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'filter_time_length' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'pool_time_length' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'pool_time_stride' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'drop_prob' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'att_depth' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'att_heads' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'att_drop_prob' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'final_fc_length' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'return_features' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'n_channels' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'input_window_samples' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:88: in EEGConformer.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegconformer.py:163: in EEGConformer.forward: section Parameters: the docstring for the argument 'x' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegitnet.py:121: in EEGITNet.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegitnet.py:121: in EEGITNet.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegitnet.py:121: in EEGITNet.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegitnet.py:121: in EEGITNet.__init__: section Parameters: the docstring for the argument 'drop_prob' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegitnet.py:121: in EEGITNet.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegitnet.py:121: in EEGITNet.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegitnet.py:121: in EEGITNet.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegitnet.py:121: in EEGITNet.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegitnet.py:121: in EEGITNet.__init__: section Parameters: the docstring for the argument 'in_channels' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegitnet.py:121: in EEGITNet.__init__: section Parameters: the docstring for the argument 'input_window_samples' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegitnet.py:121: in EEGITNet.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'final_conv_length' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'n_filters_time' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'n_filters_spat' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'filter_time_length' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'pool_time_length' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'pool_time_stride' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'n_filters_2' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'filter_length_2' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'n_filters_3' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'filter_length_3' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'n_filters_4' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'filter_length_4' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'first_conv_nonlin' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'first_pool_mode' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'first_pool_nonlin' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'later_conv_nonlin' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'later_pool_mode' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'later_pool_nonlin' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'drop_prob' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'split_first_layer' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'batch_norm' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'batch_norm_alpha' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'stride_before_pool' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'in_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'input_window_samples' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deep4.py:89: in Deep4Net.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deepsleepnet.py:190: in DeepSleepNet.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deepsleepnet.py:190: in DeepSleepNet.__init__: section Parameters: the docstring for the argument 'return_feats' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deepsleepnet.py:190: in DeepSleepNet.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deepsleepnet.py:190: in DeepSleepNet.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deepsleepnet.py:190: in DeepSleepNet.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deepsleepnet.py:190: in DeepSleepNet.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deepsleepnet.py:190: in DeepSleepNet.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deepsleepnet.py:190: in DeepSleepNet.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/deepsleepnet.py:232: in DeepSleepNet.forward: section Parameters: the docstring for the argument 'x' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'final_conv_length' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'pool_mode' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'F1' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'D' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'F2' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'kernel_length' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'third_kernel_size' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'drop_prob' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'in_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:57: in EEGNetv4.__init__: section Parameters: the docstring for the argument 'input_window_samples' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'final_conv_length' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'pool_mode' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'second_kernel_size' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'third_kernel_size' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'drop_prob' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'in_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'input_window_samples' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegnet.py:245: in EEGNetv1.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'n_filters_time' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'filter_time_length' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'n_filters_spat' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'pool_time_length' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'pool_time_stride' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'final_conv_length' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'conv_nonlin' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'pool_mode' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'pool_nonlin' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'split_first_layer' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'batch_norm' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'batch_norm_alpha' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'drop_prob' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'in_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'input_window_samples' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/shallow_fbcsp.py:67: in ShallowFBCSPNet.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/hybrid.py:31: in HybridNet.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/hybrid.py:31: in HybridNet.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/hybrid.py:31: in HybridNet.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/hybrid.py:31: in HybridNet.__init__: section Parameters: the docstring for the argument 'in_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/hybrid.py:31: in HybridNet.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/hybrid.py:31: in HybridNet.__init__: section Parameters: the docstring for the argument 'input_window_samples' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/hybrid.py:31: in HybridNet.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/hybrid.py:117: in HybridNet.forward: section Parameters: the docstring for the argument 'x' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'final_pool_length' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'n_first_filters' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'n_layers_per_block' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'first_filter_length' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'nonlinearity' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'split_first_layer' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'batch_norm_alpha' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'batch_norm_epsilon' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'conv_weight_init_fn' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'in_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'input_window_samples' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eegresnet.py:35: in EEGResNet.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'drop_prob' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'scales_samples_s' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'n_filters' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'activation' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'batch_norm_alpha' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'depth_multiplier' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'pooling_sizes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'in_channels' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'input_window_samples' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception.py:93: in EEGInception.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'drop_prob' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'scales_samples_s' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'n_filters' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'activation' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'batch_norm_alpha' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'depth_multiplier' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'pooling_sizes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'in_channels' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'input_window_samples' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_erp.py:96: in EEGInceptionERP.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:64: in EEGInceptionMI.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:64: in EEGInceptionMI.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:64: in EEGInceptionMI.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:64: in EEGInceptionMI.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:64: in EEGInceptionMI.__init__: section Parameters: the docstring for the argument 'n_convs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:64: in EEGInceptionMI.__init__: section Parameters: the docstring for the argument 'n_filters' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:64: in EEGInceptionMI.__init__: section Parameters: the docstring for the argument 'kernel_unit_s' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:64: in EEGInceptionMI.__init__: section Parameters: the docstring for the argument 'activation' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:64: in EEGInceptionMI.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:64: in EEGInceptionMI.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:64: in EEGInceptionMI.__init__: section Parameters: the docstring for the argument 'in_channels' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:64: in EEGInceptionMI.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:64: in EEGInceptionMI.__init__: section Parameters: the docstring for the argument 'input_window_s' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:64: in EEGInceptionMI.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/eeginception_mi.py:185: in EEGInceptionMI.forward: section Parameters: the docstring for the argument 'X' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'conv_block_n_filters' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'conv_block_kernel_length_1' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'conv_block_kernel_length_2' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'conv_block_pool_size_1' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'conv_block_pool_size_2' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'conv_block_depth_mult' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'conv_block_dropout' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'n_windows' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'att_head_dim' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'att_num_heads' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'att_dropout' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'tcn_depth' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'tcn_kernel_size' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'tcn_n_filters' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'tcn_dropout' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'tcn_activation' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'concat' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'max_norm_const' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'n_channels' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'input_size_s' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:101: in ATCNet.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/atcnet.py:239: in ATCNet.forward: section Parameters: the docstring for the argument 'X' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tcn.py:43: in TCN.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tcn.py:43: in TCN.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tcn.py:43: in TCN.__init__: section Parameters: the docstring for the argument 'n_blocks' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tcn.py:43: in TCN.__init__: section Parameters: the docstring for the argument 'n_filters' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tcn.py:43: in TCN.__init__: section Parameters: the docstring for the argument 'kernel_size' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tcn.py:43: in TCN.__init__: section Parameters: the docstring for the argument 'drop_prob' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tcn.py:43: in TCN.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tcn.py:43: in TCN.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tcn.py:43: in TCN.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tcn.py:43: in TCN.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tcn.py:43: in TCN.__init__: section Parameters: the docstring for the argument 'n_in_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tcn.py:43: in TCN.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tcn.py:105: in TCN.forward: section Parameters: the docstring for the argument 'x' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'n_conv_chs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'time_conv_size_s' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'max_pool_size_s' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'pad_size_s' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'dropout' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'apply_batch_norm' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'return_feats' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'n_channels' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'input_size_s' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:54: in SleepStagerChambon2018.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_chambon_2018.py:135: in SleepStagerChambon2018.forward: section Parameters: the docstring for the argument 'x' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'n_conv_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'n_groups' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'max_pool_size' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'dropout' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'apply_batch_norm' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'return_feats' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'n_channels' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'input_size_s' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:50: in SleepStagerBlanco2020.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_blanco_2020.py:144: in SleepStagerBlanco2020.forward: section Parameters: the docstring for the argument 'x' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'n_tce' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'd_model' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'd_ff' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'n_attn_heads' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'dropout' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'after_reduced_cnn_size' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'return_feats' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:70: in SleepStagerEldele2021.__init__: section Parameters: the docstring for the argument 'input_size_s' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/sleep_stager_eldele_2021.py:145: in SleepStagerEldele2021.forward: section Parameters: the docstring for the argument 'x' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 'in_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 'input_window_samples' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 's_growth' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 't_filters' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 'drop_prob' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 'pooling' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 'temp_layers' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 'spat_layers' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 'temp_span' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 'bottleneck' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 'summary' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:218: in TIDNet.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/tidnet.py:267: in TIDNet.forward: section Parameters: the docstring for the argument 'x' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'n_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'sfreq' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'depth' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'n_time_filters' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'complexity_factor' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'with_skip_connection' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'n_outputs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'input_window_seconds' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'time_conv_size_s' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'ensure_odd_conv_size' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'chs_info' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'n_times' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'in_chans' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'n_classes' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'input_size_s' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:166: in USleep.__init__: section Parameters: the docstring for the argument 'add_log_softmax' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:297: in USleep.forward: section Parameters: the docstring for the argument 'x' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/JY_low_level_encoders.py:12: in Deconv_EEGConformer.__init__: section Parameters: the docstring for the argument '*args' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/JY_low_level_encoders.py:12: in Deconv_EEGConformer.__init__: section Parameters: the docstring for the argument 'image_size' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/JY_low_level_encoders.py:12: in Deconv_EEGConformer.__init__: section Parameters: the docstring for the argument '**kwargs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/JY_low_level_encoders.py:25: in Deconv_EEGConformer.forward: section Parameters: the docstring for the argument 'x' is missing.
+  self._warn(
+/home/yjk122/IP_temp/EEG_Image_decode/Generation/JY_ThingsData.py:131: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  image_latent=torch.load(os.path.join(img_dir, 'train_image_latent_512.pt'),map_location='cpu')['image_latent']
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: yjk122123 to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.9
+wandb: Run data is saved locally in /home/yjk122/IP_temp/EEG_Image_decode/Generation/wandb/run-20250508_160559-laxo6o83
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run sub-02-ATMS-C63-1.0s-avgTrue
+wandb: ⭐️ View project at https://wandb.ai/yjk122123/THINGSEEG_Lowlevel
+wandb: 🚀 View run at https://wandb.ai/yjk122123/THINGSEEG_Lowlevel/runs/laxo6o83
+wandb: uploading history steps 48-49, summary, console lines 305-317
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:         epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇███
+wandb: learning_rate █████████████████████████████▂▂▂▂▂▂▂▂▁▁▁
+wandb:    train_loss █▇▇▆▆▅▅▄▄▄▄▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:      val_loss ██▅▄▄▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:         best_epoch 24
+wandb:      best_val_loss 39.39879
+wandb:              epoch 50
+wandb:      learning_rate 0.0
+wandb: model_architecture ATMS
+wandb:         train_loss 38.00203
+wandb:           val_loss 39.5717
+wandb: 
+wandb: 🚀 View run sub-02-ATMS-C63-1.0s-avgTrue at: https://wandb.ai/yjk122123/THINGSEEG_Lowlevel/runs/laxo6o83
+wandb: ⭐️ View project at: https://wandb.ai/yjk122123/THINGSEEG_Lowlevel
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250508_160559-laxo6o83/logs
+Using cuda:1 device
+1 subjects are loaded
+Training data: 13232 samples
+Validation data: 3308 samples
+(4, 64, 64)
+Using loss function: mse
+Epoch 1
+-------------------------------
+Train loss= 43.09724
+Validation loss: 42.746912 
+
+Learning rate=5e-05
+Epoch 2
+-------------------------------
+Train loss= 42.65488
+Validation loss: 42.572867 
+
+Learning rate=5e-05
+Epoch 3
+-------------------------------
+Train loss= 42.2227
+Validation loss: 41.783336 
+
+Learning rate=5e-05
+Epoch 4
+-------------------------------
+Train loss= 41.7179
+Validation loss: 41.255830 
+
+Learning rate=5e-05
+Epoch 5
+-------------------------------
+Train loss= 41.2749
+Validation loss: 41.115003 
+
+Learning rate=5e-05
+Epoch 6
+-------------------------------
+Train loss= 41.05298
+Validation loss: 40.850812 
+
+Learning rate=5e-05
+Epoch 7
+-------------------------------
+Train loss= 40.87622
+Validation loss: 40.604411 
+
+Learning rate=5e-05
+Epoch 8
+-------------------------------
+Train loss= 40.60373
+Validation loss: 40.346676 
+
+Learning rate=5e-05
+Epoch 9
+-------------------------------
+Train loss= 40.38998
+Validation loss: 40.229527 
+
+Learning rate=5e-05
+Epoch 10
+-------------------------------
+Train loss= 40.18561
+Validation loss: 40.102693 
+
+Learning rate=5e-05
+Epoch 11
+-------------------------------
+Train loss= 40.09299
+Validation loss: 39.937147 
+
+Learning rate=5e-05
+Epoch 12
+-------------------------------
+Train loss= 39.92419
+Validation loss: 39.843190 
+
+Learning rate=5e-05
+Epoch 13
+-------------------------------
+Train loss= 39.81127
+Validation loss: 39.778953 
+
+Learning rate=5e-05
+Epoch 14
+-------------------------------
+Train loss= 39.72722
+Validation loss: 39.704703 
+
+Learning rate=5e-05
+Epoch 15
+-------------------------------
+Train loss= 39.68185
+Validation loss: 39.666284 
+
+Learning rate=5e-05
+Epoch 16
+-------------------------------
+Train loss= 39.53851
+Validation loss: 39.649669 
+
+Learning rate=5e-05
+Epoch 17
+-------------------------------
+Train loss= 39.50123
+Validation loss: 39.544204 
+
+Learning rate=5e-05
+Epoch 18
+-------------------------------
+Train loss= 39.37545
+Validation loss: 39.565593 
+
+Learning rate=5e-05
+Epoch 19
+-------------------------------
+Train loss= 39.29258
+Validation loss: 39.570661 
+
+Learning rate=5e-05
+Epoch 20
+-------------------------------
+Train loss= 39.3141
+Validation loss: 39.497586 
+
+Learning rate=5e-05
+Epoch 21
+-------------------------------
+Train loss= 39.18612
+Validation loss: 39.536767 
+
+Learning rate=5e-05
+Epoch 22
+-------------------------------
+Train loss= 39.12685
+Validation loss: 39.509789 
+
+Learning rate=5e-05
+Epoch 23
+-------------------------------
+Train loss= 39.08985
+Validation loss: 39.433851 
+
+Learning rate=5e-05
+Epoch 24
+-------------------------------
+Train loss= 39.03471
+Validation loss: 39.398788 
+
+Learning rate=5e-05
+Epoch 25
+-------------------------------
+Train loss= 38.96148
+Validation loss: 39.438792 
+
+Learning rate=5e-05
+Epoch 26
+-------------------------------
+Train loss= 38.92067
+Validation loss: 39.478705 
+
+Learning rate=5e-05
+Epoch 27
+-------------------------------
+Train loss= 38.83671
+Validation loss: 39.461111 
+
+Learning rate=5e-05
+Epoch 28
+-------------------------------
+Train loss= 38.82103
+Validation loss: 39.413049 
+
+Learning rate=5e-05
+Epoch 29
+-------------------------------
+Train loss= 38.71447
+Validation loss: 39.511428 
+
+Learning rate=5e-05
+Epoch 30
+-------------------------------
+Train loss= 38.71519
+Validation loss: 39.484246 
+
+Learning rate=5e-05
+Epoch 31
+-------------------------------
+Train loss= 38.58276
+Validation loss: 39.469356 
+
+Learning rate=5e-05
+Epoch 32
+-------------------------------
+Train loss= 38.54461
+Validation loss: 39.516766 
+
+Learning rate=5e-05
+Epoch 33
+-------------------------------
+Train loss= 38.41987
+Validation loss: 39.483439 
+
+Learning rate=5e-05
+Epoch 34
+-------------------------------
+Train loss= 38.43286
+Validation loss: 39.499004 
+
+Learning rate=5e-05
+Epoch 35
+-------------------------------
+Train loss= 38.36359
+Validation loss: 39.515270 
+
+Overfitting!
+Learning rate=5e-06
+Epoch 36
+-------------------------------
+Train loss= 38.11635
+Validation loss: 39.431876 
+
+Overfitting!
+Learning rate=5e-06
+Epoch 37
+-------------------------------
+Train loss= 38.0579
+Validation loss: 39.437488 
+
+Overfitting!
+Learning rate=5e-06
+Epoch 38
+-------------------------------
+Train loss= 38.08484
+Validation loss: 39.458035 
+
+Overfitting!
+Learning rate=5e-06
+Epoch 39
+-------------------------------
+Train loss= 38.05987
+Validation loss: 39.457757 
+
+Overfitting!
+Learning rate=5e-06
+Epoch 40
+-------------------------------
+Train loss= 38.04101
+Validation loss: 39.521325 
+
+Overfitting!
+Learning rate=5e-06
+Epoch 41
+-------------------------------
+Train loss= 38.04716
+Validation loss: 39.445908 
+
+Overfitting!
+Learning rate=5e-06
+Epoch 42
+-------------------------------
+Train loss= 38.05528
+Validation loss: 39.470068 
+
+Overfitting!
+Learning rate=5e-06
+Epoch 43
+-------------------------------
+Train loss= 38.01621
+Validation loss: 39.464349 
+
+Overfitting!
+Learning rate=5e-06
+Epoch 44
+-------------------------------
+Train loss= 37.98571
+Validation loss: 39.500937 
+
+Overfitting!
+Learning rate=5e-06
+Epoch 45
+-------------------------------
+Train loss= 37.98674
+Validation loss: 39.508966 
+
+Overfitting!
+Learning rate=5e-06
+Epoch 46
+-------------------------------
+Train loss= 37.98095
+Validation loss: 39.496118 
+
+Overfitting!
+Learning rate=5.000000000000001e-07
+Epoch 47
+-------------------------------
+Train loss= 37.98264
+Validation loss: 39.529733 
+
+Overfitting!
+Learning rate=5.000000000000001e-07
+Epoch 48
+-------------------------------
+Train loss= 38.04283
+Validation loss: 39.519703 
+
+Overfitting!
+Learning rate=5.000000000000001e-07
+Epoch 49
+-------------------------------
+Train loss= 37.94147
+Validation loss: 39.529296 
+
+Overfitting!
+Learning rate=5.000000000000001e-07
+Epoch 50
+-------------------------------
+Train loss= 38.00203
+Validation loss: 39.571701 
+
+Overfitting!
+Learning rate=5.000000000000001e-07
+model saved in ./models/low_level/ATMS/sub-02/C63-1.0s-avgTrue/model_50.pth!

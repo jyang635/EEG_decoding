@@ -1,7 +1,7 @@
 import torch
 from torch import nn,Tensor
 from braindecode.models import EEGConformer
-from ATMS_reconstruction import ATMS
+# from ATMS_reconstruction import ATMS
 from subject_layers.Transformer_EncDec import Encoder, EncoderLayer
 from subject_layers.SelfAttention_Family import FullAttention, AttentionLayer
 from subject_layers.Embed import DataEmbedding
@@ -293,17 +293,15 @@ class ATMS(nn.Module):
         super(ATMS, self).__init__()
         default_config = config
         self.encoder = iTransformer(default_config)   
-
         self.enc_eeg = Enc_eeg()
-        self.proj_eeg = Proj_eeg(proj_dim=default_config.ATMout)        
-
-   
+        self.proj_eeg = Proj_eeg()        
          
     def forward(self, x, subject_ids):
         x = self.encoder(x, None, subject_ids)
         eeg_embedding = self.enc_eeg(x)
+        
         out = self.proj_eeg(eeg_embedding)
-        return out      
+        return out  
 
 
 class ATMS_Deconv(nn.Module):    
