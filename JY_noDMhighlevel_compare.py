@@ -39,8 +39,8 @@ def SDXL_reconstruction(eegmodel, dataloader,SDXL,device,image_size=(256, 256),s
 
     with torch.no_grad():
         for batch_idx, (img, eeg_data) in enumerate(dataloader): 
-            if batch_idx ==3:
-                break      
+            # if batch_idx ==3:
+            #     break      
             eeg_data = eeg_data.to(device)
             subject_ids = extract_id_from_string(subject_id)
             batch_size =eeg_data.size(0)

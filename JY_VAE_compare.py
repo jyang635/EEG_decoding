@@ -45,6 +45,7 @@ def VAE_reconstruction(eegmodel, dataloader, vae,device,image_size=(256, 256),mo
             z= eeg_features.to(device)
             x_rec = vae.decode(z).sample
             recon_list.append(x_rec.cpu())
+            print(f"Batch {batch_idx+1}/{len(dataloader)} processed")
             del z,x_rec
             # torch.cuda.empty_cache()
     
@@ -137,7 +138,7 @@ def main():
     num_params = sum(p.numel() for p in eeg_model.parameters() if p.requires_grad)
     # m_path=config['model_path']
     path_modelstate=f"{config['model_path']}/low_level/{config['model_type']}/{config['subject_id'][0]}/C{n_channels}-{config['time_window'][1]}s-avg{config['average_eeg']}"
-    matching_files = [f for f in os.listdir(path_modelstate) if f.startswith('best')][0]
+    matching_files = [f for f in os.listdir(path_modelstate) if f.startswith('model')][0]
     model_path = os.path.join(path_modelstate, matching_files)
     
     # Load the model state
@@ -182,24 +183,10 @@ def main():
     #     img = to_pil(image_list[i])
     #     img.save(os.path.join(recon_dir, f"original_{i}.png"))
 
-    print(f"Saved first 10 reconstructions to {recon_dir}")
+    print(f"Saved first 30 reconstructions to {recon_dir}")
 
     metrics_results = compute_metrics(image_list, recon_list,device)
-    # metrics_models_dict[config['model_type']] = metrics_results
-    # metrics_stats_dict[config['model_type']] = {
-    #     "mse_mu": round(np.mean(metrics_results["mse"]), 4),
-    #     "mse_std": round(np.std(metrics_results["mse"]), 4),
-    #     "mse_sem": round(np.std(metrics_results["mse"]) / math.sqrt(len(metrics_results["mse"])), 4),
-    #     "ssim_mu": round(np.mean(metrics_results["ssim"]), 4),
-    #     "ssim_std": round(np.std(metrics_results["ssim"]), 4),
-    #     "ssim_sem": round(np.std(metrics_results["ssim"]) / math.sqrt(len(metrics_results["ssim"])), 4),
-    #     "lpips_mu": round(np.mean(metrics_results["lpips"]), 4),
-    #     "lpips_std": round(np.std(metrics_results["lpips"]), 4),
-    #     "lpips_sem": round(np.std(metrics_results["lpips"]) / math.sqrt(len(metrics_results["lpips"])), 4),
-    #     "pixel_corr_mu": round(np.mean(metrics_results["pixel_corr"]), 4),
-    #     "pixel_corr_std": round(np.std(metrics_results["pixel_corr"]), 4),
-    #     "pixel_corr_sem": round(np.std(metrics_results["pixel_corr"]) / math.sqrt(len(metrics_results["pixel_corr"])), 4)}
-    # print(f"Metrics computed for {config['model_type']} {config['subject_id'][0]}")
+
     # Save the metrics to a CSV file
     csv_file_path =os.path.join(config['model_path'], "lowlevel_model_results.csv")
     # Check if the file exists

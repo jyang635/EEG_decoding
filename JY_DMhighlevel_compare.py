@@ -32,7 +32,7 @@ def extract_id_from_string(s):
     if match:
         return int(match.group())
     return None
-def SDXL_reconstruction(eegmodel, dataloader, DM_prior,SDXL,device,image_size=(256, 256),subject_id=None,guidance_scale=5.0):
+def SDXL_reconstruction(eegmodel, dataloader, DM_prior,SDXL,device,image_size=(256, 256),subject_id=None,guidance_scale=50.0):
     eegmodel.eval()
     recon_list=[]
     image_list=[]
@@ -53,7 +53,8 @@ def SDXL_reconstruction(eegmodel, dataloader, DM_prior,SDXL,device,image_size=(2
             # eeg_gen=transforms.Resize(image_size)(eeg_gen)
             recon_list.append(eeg_gen.cpu())
             image_list.append(img.cpu())
-            # torch.cuda.empty_cache()
+            print(f"Batch {batch_idx+1}/{len(dataloader)} processed")
+            torch.cuda.empty_cache()
     
     recon_list = torch.cat(recon_list, dim=0)
     #resize recon_list to the same size as image_list

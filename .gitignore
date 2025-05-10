@@ -9,3 +9,5 @@ __pycache__
 *.ipynb
 *.log
 wandb
+Figures
+04-23*
