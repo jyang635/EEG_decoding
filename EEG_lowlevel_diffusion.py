@@ -9,16 +9,16 @@ from torch.utils.data import DataLoader, Dataset,ConcatDataset
 
 import re
 
-from JY_ThingsData import load_multiple_subjects
+from EEG_ThingsData import load_multiple_subjects
 
 from torch.utils.data import DataLoader, Dataset
 
-from JY_low_level_encoders import Deconv_EEGConformer,encoder_low_level,encoder_low_level_channelwise,ATMS_Deconv,Config
+from EEG_low_level_encoders import Deconv_EEGConformer,encoder_low_level,encoder_low_level_channelwise,ATMS_Deconv,Config
 # from subject_layers.Transformer_EncDec import Encoder, EncoderLayer
 # from subject_layers.SelfAttention_Family import FullAttention, AttentionLayer
 # from subject_layers.Embed import DataEmbedding
 # from diffusion_prior import Pipe,EmbeddingDataset
-from JY_diffusion_prior_lowlevel import DiffusionModel4x64x64, Pipe4x64x64, EmbeddingDataset
+from EEG_diffusion_prior_lowlevel import DiffusionModel4x64x64, Pipe4x64x64, EmbeddingDataset
 
 import argparse
 import datetime

@@ -1,29 +1,21 @@
 import os
 import torch
 from torch.utils.data import DataLoader
-
 import numpy as np
 import torch.nn as nn
-import torchvision.transforms as transforms
-
-from torch.utils.data import DataLoader, Dataset
 import re
 import argparse
 import csv
-from torch import Tensor
-import math
 
-# from diffusers.pipelines.stable_diffusion_xl.pipeline_stable_diffusion_xl import *
-from diffusion_prior import DiffusionPriorUNet, Pipe,EmbeddingDataset
-from custom_pipeline import Generator4Embeds
+from diffusers.pipelines.stable_diffusion_xl.pipeline_stable_diffusion_xl import *
 
-from ATMS_reconstruction import ATMS
-from JY_ThingsData import load_multiple_subjects
-from JY_Image_metrics import compute_metrics,save_model_results_to_csv
+from EEG_low_level_encoders import Deconv_EEGConformer,encoder_low_level,encoder_low_level_channelwise,ATMS_Deconv,Config
+from EEG_ThingsData import load_multiple_subjects
+from EEG_Image_metrics import compute_metrics,save_model_results_to_csv
 
 
-from torchmetrics.image import LearnedPerceptualImagePatchSimilarity
-from torchmetrics.image import StructuralSimilarityIndexMeasure
+# from torchmetrics.image import LearnedPerceptualImagePatchSimilarity
+# from torchmetrics.image import StructuralSimilarityIndexMeasure
 from torchvision import transforms
 import torchvision.transforms as T
 
@@ -32,34 +24,36 @@ def extract_id_from_string(s):
     if match:
         return int(match.group())
     return None
-def SDXL_reconstruction(eegmodel, dataloader,SDXL,device,image_size=(256, 256),subject_id=None,guidance_scale=5.0):
+def VAE_reconstruction(eegmodel, dataloader, vae,device,image_size=(256, 256),model_type='ATMS',subject_id=None):
     eegmodel.eval()
     recon_list=[]
     image_list=[]
 
     with torch.no_grad():
-        for batch_idx, (img, eeg_data) in enumerate(dataloader): 
-            # if batch_idx ==3:
-            #     break      
+        for batch_idx, (img, eeg_data) in enumerate(dataloader):            
             eeg_data = eeg_data.to(device)
-            subject_ids = extract_id_from_string(subject_id)
-            batch_size =eeg_data.size(0)
-            subject_ids = torch.full((batch_size,), subject_ids, dtype=torch.long).to(device)
-            eeg_features = eegmodel(eeg_data,subject_ids).float()
-            eeg_gen = SDXL.generate(eeg_features.to(dtype=torch.float16))
-            eeg_gen=transforms.ToTensor()(eeg_gen)
-            # eeg_gen=transforms.Resize(image_size)(eeg_gen)
-            recon_list.append(eeg_gen.cpu())
-            image_list.append(img.cpu())
+            if model_type == 'ATMS':
+                subject_ids = extract_id_from_string(subject_id)
+                batch_size =eeg_data.size(0)
+                subject_ids = torch.full((batch_size,), subject_ids, dtype=torch.long).to(device)
+                eeg_features = eegmodel(eeg_data,subject_ids).float()
+            else:
+                eeg_features = eegmodel(eeg_data).float()
+            
+            image_list.append(img)
+            # z= eeg_features.to('cuda:1')
+            z= eeg_features.to(device)
+            x_rec = vae.decode(z).sample
+            recon_list.append(x_rec.cpu())
+            print(f"Batch {batch_idx+1}/{len(dataloader)} processed")
+            del z,x_rec
             # torch.cuda.empty_cache()
     
     recon_list = torch.cat(recon_list, dim=0)
     #resize recon_list to the same size as image_list
     # recon_list=transforms.Resize((img.shape[2], img.shape[3]))(recon_list)
-    # recon_list= (recon_list+1)/2
+    recon_list= (recon_list+1)/2   # This is to make sure the recon_list is in the range of 0-1
     recon_list=transforms.Resize(image_size)(recon_list)
-    recon_list = recon_list.view(-1, 3, 256, 256)
-    print( f"Recon_list shape: {recon_list.shape}")
     
     ### make sure the recon_list is in the range of 0-1
     image_list = torch.cat(image_list, dim=0)
@@ -69,9 +63,6 @@ def SDXL_reconstruction(eegmodel, dataloader,SDXL,device,image_size=(256, 256),s
     return image_list,recon_list
 
 
-
-    
-    # print(f"Results for model '{config['model_type']}' saved to {csv_file_path}")
 def main():
     # Argument parser setup
     parser = argparse.ArgumentParser(description='Conformer+deconv')
@@ -83,7 +74,8 @@ def main():
     parser.add_argument('--subject_id', type=str, default='sub-01', help='Subject ID to analyze')
     parser.add_argument('--start_time', type=float, default=0.0, help='Start time for analysis window')
     parser.add_argument('--end_time', type=float, default=1.0, help='End time for analysis window')
-    parser.add_argument('--model', type=str,choices=['encoder_low_level', 'encoder_low_level_channelwise', 'EEGConformer','ATMS'], default='ATMS')
+    parser.add_argument('--batch_size', type=int, default=10, help='Batch size for training')
+    parser.add_argument('--model', type=str,choices=['encoder_low_level', 'encoder_low_level_channelwise', 'EEGConformer','ATMS'], default='encoder_low_level')
     parser.add_argument('--seed', type=int, default=1, help='Random seed')
     parser.add_argument('--channels', type=str, default='All', 
                         help='EEG channels to use (comma-separated)')
@@ -92,6 +84,8 @@ def main():
     parser.add_argument('--average_eeg', action='store_true', help='Whether to average EEG data')
     
     args = parser.parse_args()
+  
+
 
     device = torch.device(f"cuda:{args.gpu}" if torch.cuda.is_available() else "cpu")
     print(f"Using {device} device")
@@ -105,6 +99,7 @@ def main():
                 "subject_id": args.subject_id.split(','),
                 "time_window": [args.start_time, args.end_time],
                 "channels": args.channels.split(','),
+                "batch_size": args.batch_size,  
                 "image_size": image_size,
                 "seed": args.seed,
                 'average_eeg': args.average_eeg,
@@ -123,35 +118,59 @@ def main():
         n_channels = len(test_d[0][1])
     else:
         n_channels = len(config['channels'])
-    eeg_model=ATMS(63,250)
+    if config['model_type']== 'encoder_low_level':
+        eeg_model = encoder_low_level(num_channels=n_channels, sequence_length=ntimes).to(device)
+    elif config['model_type'] == 'EEGConformer':
+        eeg_model = Deconv_EEGConformer(n_outputs=2, n_chans=n_channels, n_filters_time=180, 
+                                    filter_time_length=20, pool_time_length=5, pool_time_stride=5, 
+                                    drop_prob=0.5, att_depth=3, att_heads=30, att_drop_prob=0.5, 
+                                    final_fc_length='auto', return_features=False, n_times=ntimes, 
+                                    chs_info=None, input_window_seconds=None, sfreq=None, n_classes=None, 
+                                    n_channels=None, input_window_samples=None).to(device)
+    elif config['model_type'] == 'encoder_low_level_channelwise':
+        eeg_model = encoder_low_level(num_channels=n_channels, sequence_length=ntimes).to(device)
+    elif config['model_type'] == 'ATMS':
+        ATM_config = Config(seq_len=ntimes,ATMoutput=1024)
+        eeg_model=ATMS_Deconv(ATM_config)
+    else:
+        raise ValueError(f"Unknown model type: {config['model_type']}")
     #get the number of parameters in the model
     num_params = sum(p.numel() for p in eeg_model.parameters() if p.requires_grad)
     # m_path=config['model_path']
-    path_modelstate=f"{config['model_path']}/contrast/{config['model_type']}/{config['subject_id'][0]}"
-    only_folders = [f for f in os.listdir(path_modelstate) if os.path.isdir(os.path.join(path_modelstate, f))]
-    checkpoint= torch.load(os.path.join(path_modelstate, only_folders[0],'40.pth'), map_location=device,weights_only=True)
-    # model_path = os.path.join(path_modelstate, matching_files)
+    path_modelstate=f"{config['model_path']}/low_level/{config['model_type']}/{config['subject_id'][0]}/C{n_channels}-{config['time_window'][1]}s-avg{config['average_eeg']}"
+    matching_files = [f for f in os.listdir(path_modelstate) if f.startswith('model')][0]
+    model_path = os.path.join(path_modelstate, matching_files)
     
     # Load the model state
-    # checkpoint = torch.load(model_path, map_location=device,weights_only=True)
+    checkpoint = torch.load(model_path, map_location=device,weights_only=True)
     eeg_model.load_state_dict(checkpoint)
     eeg_model.to(device)
     eeg_model.eval()
-    test_loader = DataLoader(test_d, batch_size=1, shuffle=False)
 
 
-    generator = Generator4Embeds(num_inference_steps=4, device=device)
-    # torch.cuda.empty_cache()
+    test_loader = DataLoader(test_d, batch_size=config['batch_size'], shuffle=False)
+    # Load the VAE model
+    pipe = DiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float, variant="fp16")
+    if hasattr(pipe, 'vae'):
+        for param in pipe.vae.parameters():
+            param.requires_grad = False
+    vae = pipe.vae.to(device)
+    # vae = pipe.vae
+    del pipe
+    vae.requires_grad_(False)
+    vae.eval()
+    print(f"VAE loaded")
+    torch.cuda.empty_cache()
 
     # Get the GT images and the eeg embeddings
-    image_list,recon_list = SDXL_reconstruction(eeg_model, 
-                                                test_loader,SDXL=generator,
-                                                device=device,subject_id=config['subject_id'][0],
-                                                guidance_scale=50.0)
-    print(f"Reconstructions obtained for {config['subject_id'][0]}")
+    image_list,recon_list = VAE_reconstruction(eeg_model, test_loader,vae, device,model_type=config['model_type'],subject_id=config['subject_id'][0])
+    print(f"Reconstructions obtained for {config['model_type']} {config['subject_id'][0]}")
 
-        # Create a directory for the reconstructed images if it doesn't exist
-    recon_dir = os.path.join(config['model_path'], f"noDMHighlevel_reconstructions/{config['model_type']}_{config['subject_id'][0]}")
+    # metrics_models_dict= {config['model_type']: 0}
+    # metrics_stats_dict = {config['model_type']: 0 }
+
+    # Create a directory for the reconstructed images if it doesn't exist
+    recon_dir = os.path.join(config['model_path'], f"Lowlevel_reconstructions/{config['model_type']}_{config['subject_id'][0]}")
     os.makedirs(recon_dir, exist_ok=True)
     # Convert tensor images to PIL images and save them
     to_pil = T.ToPILImage()
@@ -159,17 +178,17 @@ def main():
         img = to_pil(recon_list[i])
         img.save(os.path.join(recon_dir, f"recon_{i}.png"))
 
-    # Also save the original images for comparison
-    # for i in range(min(10, image_list.shape[0])):
+    # # Also save the original images for comparison
+    # for i in range(min(30, image_list.shape[0])):
     #     img = to_pil(image_list[i])
     #     img.save(os.path.join(recon_dir, f"original_{i}.png"))
 
-    print(f"Saved first 10 reconstructions to {recon_dir}")
+    print(f"Saved first 30 reconstructions to {recon_dir}")
 
     metrics_results = compute_metrics(image_list, recon_list,device)
 
     # Save the metrics to a CSV file
-    csv_file_path =os.path.join(config['model_path'], "noDMHighlevel_model_results.csv")
+    csv_file_path =os.path.join(config['model_path'], "lowlevel_model_results.csv")
     # Check if the file exists
     if not os.path.exists(csv_file_path):
         # Define the header for the CSV file

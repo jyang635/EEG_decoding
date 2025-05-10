@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader, Dataset,ConcatDataset
 
 import re
 
-from JY_ThingsData import load_multiple_subjects
+from EEG_ThingsData import load_multiple_subjects
 
 from torch.utils.data import DataLoader, Dataset
 

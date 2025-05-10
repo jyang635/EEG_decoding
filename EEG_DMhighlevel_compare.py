@@ -18,8 +18,8 @@ from diffusion_prior import DiffusionPriorUNet, Pipe,EmbeddingDataset
 from custom_pipeline import Generator4Embeds
 
 from ATMS_reconstruction import ATMS
-from JY_ThingsData import load_multiple_subjects
-from JY_Image_metrics import compute_metrics,save_model_results_to_csv
+from EEG_ThingsData import load_multiple_subjects
+from EEG_Image_metrics import compute_metrics,save_model_results_to_csv
 
 
 from torchmetrics.image import LearnedPerceptualImagePatchSimilarity

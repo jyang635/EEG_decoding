@@ -18,8 +18,8 @@ import re
 import argparse
 import datetime
 
-from JY_low_level_encoders import Deconv_EEGConformer,encoder_low_level,encoder_low_level_channelwise,ATMS_Deconv,Config
-from JY_ThingsData import load_multiple_subjects
+from EEG_low_level_encoders import Deconv_EEGConformer,encoder_low_level,encoder_low_level_channelwise,ATMS_Deconv,Config
+from EEG_ThingsData import load_multiple_subjects
 
 os.environ["WANDB_MODE"] = 'online'
 # image_processor = VaeImageProcessor()

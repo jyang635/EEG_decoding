@@ -14,10 +14,10 @@ from diffusion_prior import DiffusionPriorUNet, Pipe,EmbeddingDataset
 from custom_pipeline import generate_ip_adapter_embeds
 
 from ATMS_reconstruction import ATMS as ATMS_highlevel
-from JY_low_level_encoders import Deconv_EEGConformer,encoder_low_level,encoder_low_level_channelwise,ATMS_Deconv,Config
-from JY_ThingsData import load_multiple_subjects
-from JY_Image_metrics import compute_metrics,save_model_results_to_csv
-from JY_VAE_compare import VAE_reconstruction
+from EEG_low_level_encoders import Deconv_EEGConformer,encoder_low_level,encoder_low_level_channelwise,ATMS_Deconv,Config
+from EEG_ThingsData import load_multiple_subjects
+from EEG_Image_metrics import compute_metrics,save_model_results_to_csv
+from EEG_VAE_compare import VAE_reconstruction
 
 from torchvision import transforms
 # from PIL import Image
