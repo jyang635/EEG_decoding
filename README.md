@@ -1,6 +1,6 @@
 # On the Role of Low-Level Visual Features in EEG-Based Image Reconstruction
 
-Official implementation of "[On the Role of Low-Level Visual Features in EEG-Based Image Reconstruction]" <!-- -accepted at [Conference/Journal Name]-->.
+Official implementation of "On the Role of Low-Level Visual Features in EEG-Based Image Reconstruction" <!-- -accepted at [Conference/Journal Name]-->.
 
 <!--## Abstract
 
