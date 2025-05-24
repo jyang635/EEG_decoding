@@ -13,12 +13,12 @@ from EEG_ThingsData import load_multiple_subjects
 
 from torch.utils.data import DataLoader, Dataset
 
-from EEG_low_level_encoders import Deconv_EEGConformer,encoder_low_level,encoder_low_level_channelwise,ATMS_Deconv,Config
+from EEG_low_level_encoders import EEGConformer_Deconv,encoder_low_level,encoder_low_level_channelwise,ATMS_Deconv,Config
 # from subject_layers.Transformer_EncDec import Encoder, EncoderLayer
 # from subject_layers.SelfAttention_Family import FullAttention, AttentionLayer
 # from subject_layers.Embed import DataEmbedding
 # from diffusion_prior import Pipe,EmbeddingDataset
-from EEG_diffusion_prior_lowlevel import DiffusionModel4x64x64, Pipe4x64x64, EmbeddingDataset
+from EEG_diffusion_prior_lowlevel import DiffusionPriorUNet,ImageDataset,Pipe
 
 import argparse
 import datetime
@@ -64,11 +64,11 @@ def main():
     parser.add_argument('--subject_id', type=str, default='sub-01', help='Subject ID to analyze')
     parser.add_argument('--start_time', type=float, default=0.0, help='Start time for analysis window')
     parser.add_argument('--end_time', type=float, default=1.0, help='End time for analysis window')
-    parser.add_argument('--batch_size', type=int, default=200, help='Batch size for training')
+    parser.add_argument('--batch_size', type=int, default=30, help='Batch size for training')
     parser.add_argument('--model', type=str,choices=['encoder_low_level', 'encoder_low_level_channelwise', 'EEGConformer','ATMS'], default='ATMS')
     parser.add_argument('--learning_rate', type=float, default=1e-3, help='Learning rate')
     parser.add_argument('--weight_decay', type=float, default=5e-5, help='Weight decay')
-    parser.add_argument('--epochs', type=int, default=150, help='Number of training epochs')
+    parser.add_argument('--epochs', type=int, default=40, help='Number of training epochs')
     parser.add_argument('--early_stopping', type=int, default=10, help='Early stopping patience')
     parser.add_argument('--seed', type=int, default=1, help='Random seed')
     parser.add_argument('--loss', type=str, default='mse', help='loss function to use')
@@ -77,6 +77,7 @@ def main():
     parser.add_argument('--gpu', type=str, default='0', help='GPU to use')
     parser.add_argument('--average_eeg', action='store_true', help='Whether to average EEG data')
     parser.add_argument('--latent_mapping', default='VAE', help='Whether to use latent mapping')
+    parser.add_argument('--save_model', action='store_true', help='Whether to save the model')
     
     args = parser.parse_args()
     # Initialize wandb
@@ -101,7 +102,8 @@ def main():
                 "seed": args.seed,
                 "loss": args.loss,
                 'average_eeg': args.average_eeg,
-                "latent_mapping": args.latent_mapping
+                "latent_mapping": args.latent_mapping,
+                "save_model": args.save_model
             }
     # Add this before your training loop
     # print(f"Config: {config['average_eeg']}")
@@ -131,7 +133,7 @@ def main():
     if config['model_type']== 'encoder_low_level':
         eeg_model = encoder_low_level(num_channels=n_channels, sequence_length=ntimes).to(device)
     elif config['model_type'] == 'EEGConformer':
-        eeg_model = Deconv_EEGConformer(n_outputs=2, n_chans=n_channels, n_filters_time=180, 
+        eeg_model = EEGConformer_Deconv(n_outputs=2, n_chans=n_channels, n_filters_time=90, 
                                     filter_time_length=20, pool_time_length=5, pool_time_stride=5, 
                                     drop_prob=0.5, att_depth=3, att_heads=30, att_drop_prob=0.5, 
                                     final_fc_length='auto', return_features=False, n_times=ntimes, 
@@ -163,21 +165,28 @@ def main():
     del train_dataloader,train_d,combined_dataset,validation_d
     torch.cuda.empty_cache()
 
-    dataset_train = EmbeddingDataset(c_embeddings=eeg_embed_train, h_embeddings=image_embed_train)
-    dl_train = DataLoader(dataset_train, batch_size=1024, shuffle=True)
+    dataset_train = ImageDataset(target_images=image_embed_train,condition_images=eeg_embed_train)
+    dl_train = DataLoader(dataset_train, batch_size=config['batch_size'], shuffle=True)
 
-    diffusion_prior = DiffusionModel4x64x64()
+    diffusion_prior = DiffusionPriorUNet(dropout=0.1)
     # # number of parameters
     # print('number of parameters in the DM:'+sum(p.numel() for p in diffusion_prior.parameters() if p.requires_grad))
-    pipe = Pipe4x64x64(diffusion_prior=diffusion_prior,device=device)
+    pipe = Pipe(diffusion_prior=diffusion_prior,device=device)
 
     # load pretrained model
     model_name = 'diffusion_prior' # 'diffusion_prior_vice_pre_imagenet' or 'diffusion_prior_vice_pre'
     pipe.train(dl_train, num_epochs=config['epochs'], learning_rate=config['learning_rate']) # to 0.142     
-        # Save the model weights
-    model_path=f"./models/DM_lowlevel/{config['subject_id'][0]}"
-    os.makedirs(model_path, exist_ok=True)             
-    file_path = f"{model_path}/lowlevel_DM.pth"
-    torch.save(pipe.diffusion_prior.state_dict(), file_path)
+    if config['save_model']:
+        # Save the model
+        model_path=f"./models/DM_lowlevel/{config['model_type']}/{config['subject_id'][0]}"
+        print(f"Saving model to {model_path}")
+        os.makedirs(model_path, exist_ok=True)             
+        file_path = f"{model_path}/lowlevel_DM.pth"
+        torch.save(pipe.diffusion_prior.state_dict(), file_path)
+    # # Save the model weights
+
+    # os.makedirs(model_path, exist_ok=True)             
+    # file_path = f"{model_path}/lowlevel_DM.pth"
+    # torch.save(pipe.diffusion_prior.state_dict(), file_path)
 if __name__ == '__main__':
     main()

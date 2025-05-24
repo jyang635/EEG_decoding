@@ -74,11 +74,18 @@ def load_subject_data(subject_id, eeg_dir, img_metadata, start_time=None, end_ti
     eeg_parent_dir = os.path.join(eeg_dir, f'{subject_id}')
 
     if training:
-        eeg_data = np.load(os.path.join(eeg_parent_dir, 'preprocessed_eeg_training.npy'), allow_pickle=True)
+        try:
+            eeg_data = np.load(os.path.join(eeg_parent_dir, 'preprocessed_eeg_training.npy'), allow_pickle=True).item()
+        except AttributeError:
+            eeg_data = np.load(os.path.join(eeg_parent_dir, 'preprocessed_eeg_training.npy'), allow_pickle=True)
+        # eeg_data = np.load(os.path.join(eeg_parent_dir, 'preprocessed_eeg_training.npy'), allow_pickle=True)
         eeg_data_tensor = torch.tensor(eeg_data['preprocessed_eeg_data'], dtype=torch.float32)
         # time_indices = np.where((eeg_data['times'] >= start_time) & (eeg_data['times'] <= end_time))[0]
     else:
-        eeg_data = np.load(os.path.join(eeg_parent_dir, 'preprocessed_eeg_test.npy'), allow_pickle=True)
+        try:
+            eeg_data = np.load(os.path.join(eeg_parent_dir, 'preprocessed_eeg_test.npy'), allow_pickle=True).tiem()
+        except AttributeError: 
+            eeg_data = np.load(os.path.join(eeg_parent_dir, 'preprocessed_eeg_test.npy'), allow_pickle=True)
         eeg_data_tensor = torch.tensor(eeg_data['preprocessed_eeg_data'], dtype=torch.float32)
         
 

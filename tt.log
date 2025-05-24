@@ -660,366 +660,368 @@
   self._warn(
 /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/usleep.py:297: in USleep.forward: section Parameters: the docstring for the argument 'x' is missing.
   self._warn(
-/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/JY_low_level_encoders.py:12: in Deconv_EEGConformer.__init__: section Parameters: the docstring for the argument '*args' is missing.
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/EEG_low_level_encoders.py:67: in EEGConformer_Deconv.__init__: section Parameters: the docstring for the argument '*args' is missing.
   self._warn(
-/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/JY_low_level_encoders.py:12: in Deconv_EEGConformer.__init__: section Parameters: the docstring for the argument 'image_size' is missing.
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/EEG_low_level_encoders.py:67: in EEGConformer_Deconv.__init__: section Parameters: the docstring for the argument 'image_size' is missing.
   self._warn(
-/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/JY_low_level_encoders.py:12: in Deconv_EEGConformer.__init__: section Parameters: the docstring for the argument '**kwargs' is missing.
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/EEG_low_level_encoders.py:67: in EEGConformer_Deconv.__init__: section Parameters: the docstring for the argument '**kwargs' is missing.
   self._warn(
-/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/JY_low_level_encoders.py:25: in Deconv_EEGConformer.forward: section Parameters: the docstring for the argument 'x' is missing.
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/EEG_low_level_encoders.py:80: in EEGConformer_Deconv.forward: section Parameters: the docstring for the argument 'x' is missing.
   self._warn(
-/home/yjk122/IP_temp/EEG_Image_decode/Generation/JY_ThingsData.py:131: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/EEG_low_level_encoders.py:88: in EEGConformer_Deconv2.__init__: section Parameters: the docstring for the argument '*args' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/EEG_low_level_encoders.py:88: in EEGConformer_Deconv2.__init__: section Parameters: the docstring for the argument 'image_size' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/EEG_low_level_encoders.py:88: in EEGConformer_Deconv2.__init__: section Parameters: the docstring for the argument '**kwargs' is missing.
+  self._warn(
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/docstring_inheritance/docstring_inheritors/bases/inheritor.py:329: DocstringInheritanceWarning: File /home/yjk122/IP_temp/EEG_Image_decode/Generation/EEG_low_level_encoders.py:101: in EEGConformer_Deconv2.forward: section Parameters: the docstring for the argument 'x' is missing.
+  self._warn(
+/home/yjk122/IP_temp/EEG_Image_decode/Generation/EEG_ThingsData.py:138: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
   image_latent=torch.load(os.path.join(img_dir, 'train_image_latent_512.pt'),map_location='cpu')['image_latent']
+/home/yjk122/miniconda3/envs/BCI/lib/python3.10/site-packages/braindecode/models/base.py:180: UserWarning: LogSoftmax final layer will be removed! Please adjust your loss function accordingly (e.g. CrossEntropyLoss)!
+  warnings.warn("LogSoftmax final layer will be removed! " +
 wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
 wandb: Currently logged in as: yjk122123 to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
 wandb: Tracking run with wandb version 0.19.9
-wandb: Run data is saved locally in /home/yjk122/IP_temp/EEG_Image_decode/Generation/wandb/run-20250508_160559-laxo6o83
+wandb: Run data is saved locally in /home/yjk122/IP_temp/EEG_Image_decode/Generation/wandb/run-20250522_170206-0isljuvn
 wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run sub-02-ATMS-C63-1.0s-avgTrue
-wandb: ⭐️ View project at https://wandb.ai/yjk122123/THINGSEEG_Lowlevel
-wandb: 🚀 View run at https://wandb.ai/yjk122123/THINGSEEG_Lowlevel/runs/laxo6o83
-wandb: uploading history steps 48-49, summary, console lines 305-317
+wandb: Syncing run sub-01-EEGConformer-C9-0.6s-avgTrue
+wandb: ⭐️ View project at https://wandb.ai/yjk122123/EEG_noaverage
+wandb: 🚀 View run at https://wandb.ai/yjk122123/EEG_noaverage/runs/0isljuvn
 wandb:                                                                                
 wandb: 
 wandb: Run history:
-wandb:         epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇███
-wandb: learning_rate █████████████████████████████▂▂▂▂▂▂▂▂▁▁▁
-wandb:    train_loss █▇▇▆▆▅▅▄▄▄▄▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
-wandb:      val_loss ██▅▄▄▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         epoch ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇███
+wandb: learning_rate ███████████████████████████▂▂▂▂▂▂▂▂▂▁▁▁▁
+wandb:    train_loss █▆▆▅▅▅▅▄▄▄▄▄▄▄▃▃▃▃▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      val_loss █▆▅▄▄▃▃▃▂▂▂▂▂▂▁▁▁▁▂▁▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 wandb: 
 wandb: Run summary:
-wandb:         best_epoch 24
-wandb:      best_val_loss 39.39879
+wandb:         best_epoch 33
+wandb:      best_val_loss 38.53231
 wandb:              epoch 50
-wandb:      learning_rate 0.0
-wandb: model_architecture ATMS
-wandb:         train_loss 38.00203
-wandb:           val_loss 39.5717
+wandb:      learning_rate 1e-05
+wandb: model_architecture EEGConformer
+wandb:         train_loss 36.3933
+wandb:           val_loss 38.69332
 wandb: 
-wandb: 🚀 View run sub-02-ATMS-C63-1.0s-avgTrue at: https://wandb.ai/yjk122123/THINGSEEG_Lowlevel/runs/laxo6o83
-wandb: ⭐️ View project at: https://wandb.ai/yjk122123/THINGSEEG_Lowlevel
+wandb: 🚀 View run sub-01-EEGConformer-C9-0.6s-avgTrue at: https://wandb.ai/yjk122123/EEG_noaverage/runs/0isljuvn
+wandb: ⭐️ View project at: https://wandb.ai/yjk122123/EEG_noaverage
 wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
-wandb: Find logs at: ./wandb/run-20250508_160559-laxo6o83/logs
+wandb: Find logs at: ./wandb/run-20250522_170206-0isljuvn/logs
 Using cuda:1 device
 1 subjects are loaded
 Training data: 13232 samples
 Validation data: 3308 samples
+Size of final fc layer: 2340
 (4, 64, 64)
+Model type: EEGConformer
 Using loss function: mse
 Epoch 1
 -------------------------------
-Train loss= 43.09724
-Validation loss: 42.746912 
+Train loss= 41.69473
+Validation loss: 40.933444 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 2
 -------------------------------
-Train loss= 42.65488
-Validation loss: 42.572867 
+Train loss= 40.36358
+Validation loss: 40.385121 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 3
 -------------------------------
-Train loss= 42.2227
-Validation loss: 41.783336 
+Train loss= 39.95923
+Validation loss: 39.819757 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 4
 -------------------------------
-Train loss= 41.7179
-Validation loss: 41.255830 
+Train loss= 39.62652
+Validation loss: 39.530805 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 5
 -------------------------------
-Train loss= 41.2749
-Validation loss: 41.115003 
+Train loss= 39.47176
+Validation loss: 39.454180 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 6
 -------------------------------
-Train loss= 41.05298
-Validation loss: 40.850812 
+Train loss= 39.27275
+Validation loss: 39.338052 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 7
 -------------------------------
-Train loss= 40.87622
-Validation loss: 40.604411 
+Train loss= 39.16699
+Validation loss: 39.218149 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 8
 -------------------------------
-Train loss= 40.60373
-Validation loss: 40.346676 
+Train loss= 39.12739
+Validation loss: 39.133987 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 9
 -------------------------------
-Train loss= 40.38998
-Validation loss: 40.229527 
+Train loss= 38.99911
+Validation loss: 39.101312 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 10
 -------------------------------
-Train loss= 40.18561
-Validation loss: 40.102693 
+Train loss= 38.87616
+Validation loss: 38.994978 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 11
 -------------------------------
-Train loss= 40.09299
-Validation loss: 39.937147 
+Train loss= 38.84692
+Validation loss: 39.006818 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 12
 -------------------------------
-Train loss= 39.92419
-Validation loss: 39.843190 
+Train loss= 38.66979
+Validation loss: 38.957195 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 13
 -------------------------------
-Train loss= 39.81127
-Validation loss: 39.778953 
+Train loss= 38.64597
+Validation loss: 38.947551 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 14
 -------------------------------
-Train loss= 39.72722
-Validation loss: 39.704703 
+Train loss= 38.51563
+Validation loss: 38.822376 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 15
 -------------------------------
-Train loss= 39.68185
-Validation loss: 39.666284 
+Train loss= 38.37675
+Validation loss: 38.785818 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 16
 -------------------------------
-Train loss= 39.53851
-Validation loss: 39.649669 
+Train loss= 38.39579
+Validation loss: 38.723556 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 17
 -------------------------------
-Train loss= 39.50123
-Validation loss: 39.544204 
+Train loss= 38.26956
+Validation loss: 38.684416 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 18
 -------------------------------
-Train loss= 39.37545
-Validation loss: 39.565593 
+Train loss= 38.23267
+Validation loss: 38.753299 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 19
 -------------------------------
-Train loss= 39.29258
-Validation loss: 39.570661 
+Train loss= 38.09141
+Validation loss: 38.686107 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 20
 -------------------------------
-Train loss= 39.3141
-Validation loss: 39.497586 
+Train loss= 37.96139
+Validation loss: 38.665394 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 21
 -------------------------------
-Train loss= 39.18612
-Validation loss: 39.536767 
+Train loss= 37.88883
+Validation loss: 38.549478 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 22
 -------------------------------
-Train loss= 39.12685
-Validation loss: 39.509789 
+Train loss= 37.83676
+Validation loss: 38.718750 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 23
 -------------------------------
-Train loss= 39.08985
-Validation loss: 39.433851 
+Train loss= 37.77701
+Validation loss: 38.606665 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 24
 -------------------------------
-Train loss= 39.03471
-Validation loss: 39.398788 
+Train loss= 37.73523
+Validation loss: 38.615786 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 25
 -------------------------------
-Train loss= 38.96148
-Validation loss: 39.438792 
+Train loss= 37.6428
+Validation loss: 38.828808 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 26
 -------------------------------
-Train loss= 38.92067
-Validation loss: 39.478705 
+Train loss= 37.5976
+Validation loss: 38.755480 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 27
 -------------------------------
-Train loss= 38.83671
-Validation loss: 39.461111 
+Train loss= 37.54889
+Validation loss: 38.769427 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 28
 -------------------------------
-Train loss= 38.82103
-Validation loss: 39.413049 
+Train loss= 37.48472
+Validation loss: 38.596722 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 29
 -------------------------------
-Train loss= 38.71447
-Validation loss: 39.511428 
+Train loss= 37.48608
+Validation loss: 38.681459 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 30
 -------------------------------
-Train loss= 38.71519
-Validation loss: 39.484246 
+Train loss= 37.37384
+Validation loss: 38.653963 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 31
 -------------------------------
-Train loss= 38.58276
-Validation loss: 39.469356 
+Train loss= 37.32731
+Validation loss: 38.667444 
 
-Learning rate=5e-05
+Learning rate=0.001
 Epoch 32
 -------------------------------
-Train loss= 38.54461
-Validation loss: 39.516766 
+Train loss= 37.14262
+Validation loss: 38.676966 
 
-Learning rate=5e-05
+Overfitting!
+Learning rate=0.0001
 Epoch 33
 -------------------------------
-Train loss= 38.41987
-Validation loss: 39.483439 
+Train loss= 36.81315
+Validation loss: 38.532309 
 
-Learning rate=5e-05
+Learning rate=0.0001
 Epoch 34
 -------------------------------
-Train loss= 38.43286
-Validation loss: 39.499004 
+Train loss= 36.72252
+Validation loss: 38.556627 
 
-Learning rate=5e-05
+Learning rate=0.0001
 Epoch 35
 -------------------------------
-Train loss= 38.36359
-Validation loss: 39.515270 
+Train loss= 36.67976
+Validation loss: 38.594274 
 
-Overfitting!
-Learning rate=5e-06
+Learning rate=0.0001
 Epoch 36
 -------------------------------
-Train loss= 38.11635
-Validation loss: 39.431876 
+Train loss= 36.6255
+Validation loss: 38.616791 
 
-Overfitting!
-Learning rate=5e-06
+Learning rate=0.0001
 Epoch 37
 -------------------------------
-Train loss= 38.0579
-Validation loss: 39.437488 
+Train loss= 36.61065
+Validation loss: 38.640167 
 
-Overfitting!
-Learning rate=5e-06
+Learning rate=0.0001
 Epoch 38
 -------------------------------
-Train loss= 38.08484
-Validation loss: 39.458035 
+Train loss= 36.57237
+Validation loss: 38.616826 
 
-Overfitting!
-Learning rate=5e-06
+Learning rate=0.0001
 Epoch 39
 -------------------------------
-Train loss= 38.05987
-Validation loss: 39.457757 
+Train loss= 36.57946
+Validation loss: 38.634850 
 
-Overfitting!
-Learning rate=5e-06
+Learning rate=0.0001
 Epoch 40
 -------------------------------
-Train loss= 38.04101
-Validation loss: 39.521325 
+Train loss= 36.51269
+Validation loss: 38.618163 
 
-Overfitting!
-Learning rate=5e-06
+Learning rate=0.0001
 Epoch 41
 -------------------------------
-Train loss= 38.04716
-Validation loss: 39.445908 
+Train loss= 36.5458
+Validation loss: 38.607011 
 
-Overfitting!
-Learning rate=5e-06
+Learning rate=0.0001
 Epoch 42
 -------------------------------
-Train loss= 38.05528
-Validation loss: 39.470068 
+Train loss= 36.46823
+Validation loss: 38.674815 
 
-Overfitting!
-Learning rate=5e-06
+Learning rate=0.0001
 Epoch 43
 -------------------------------
-Train loss= 38.01621
-Validation loss: 39.464349 
+Train loss= 36.52115
+Validation loss: 38.663939 
 
-Overfitting!
-Learning rate=5e-06
+Learning rate=0.0001
 Epoch 44
 -------------------------------
-Train loss= 37.98571
-Validation loss: 39.500937 
+Train loss= 36.44922
+Validation loss: 38.678328 
 
 Overfitting!
-Learning rate=5e-06
+Learning rate=1e-05
 Epoch 45
 -------------------------------
-Train loss= 37.98674
-Validation loss: 39.508966 
+Train loss= 36.41353
+Validation loss: 38.687143 
 
 Overfitting!
-Learning rate=5e-06
+Learning rate=1e-05
 Epoch 46
 -------------------------------
-Train loss= 37.98095
-Validation loss: 39.496118 
+Train loss= 36.40015
+Validation loss: 38.666329 
 
 Overfitting!
-Learning rate=5.000000000000001e-07
+Learning rate=1e-05
 Epoch 47
 -------------------------------
-Train loss= 37.98264
-Validation loss: 39.529733 
+Train loss= 36.40124
+Validation loss: 38.646546 
 
 Overfitting!
-Learning rate=5.000000000000001e-07
+Learning rate=1e-05
 Epoch 48
 -------------------------------
-Train loss= 38.04283
-Validation loss: 39.519703 
+Train loss= 36.41653
+Validation loss: 38.674465 
 
 Overfitting!
-Learning rate=5.000000000000001e-07
+Learning rate=1e-05
 Epoch 49
 -------------------------------
-Train loss= 37.94147
-Validation loss: 39.529296 
+Train loss= 36.31268
+Validation loss: 38.644446 
 
 Overfitting!
-Learning rate=5.000000000000001e-07
+Learning rate=1e-05
 Epoch 50
 -------------------------------
-Train loss= 38.00203
-Validation loss: 39.571701 
+Train loss= 36.3933
+Validation loss: 38.693323 
 
 Overfitting!
-Learning rate=5.000000000000001e-07
-model saved in ./models/low_level/ATMS/sub-02/C63-1.0s-avgTrue/model_50.pth!
+Learning rate=1e-05

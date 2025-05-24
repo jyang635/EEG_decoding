@@ -210,11 +210,12 @@ def main():
     parser.add_argument('--early_stopping', type=int, default=10, help='Early stopping patience')
     parser.add_argument('--seed', type=int, default=1, help='Random seed')
     parser.add_argument('--loss', type=str, default='mse', help='loss function to use')
-    parser.add_argument('--channels', type=str, default='O1,Oz,O2', 
+    parser.add_argument('--channels', type=str, default='All', 
                         help='EEG channels to use (comma-separated)')
     parser.add_argument('--gpu', type=str, default='0', help='GPU to use')
     parser.add_argument('--average_eeg', action='store_true', help='Whether to average EEG data')
     parser.add_argument('--latent_mapping', default='CLIP', help='Whether to use latent mapping')
+    parser.add_argument('--save_model', action='store_true', help='Whether to save the model')
     
     args = parser.parse_args()
     # Initialize wandb
@@ -239,7 +240,8 @@ def main():
                 "seed": args.seed,
                 "loss": args.loss,
                 'average_eeg': args.average_eeg,
-                "latent_mapping": args.latent_mapping
+                "latent_mapping": args.latent_mapping,
+                "save_model": args.save_model
             }
     # Add this before your training loop
     # print(f"Config: {config['average_eeg']}")
@@ -255,7 +257,7 @@ def main():
                                                     end_time=config['time_window'][1],desired_channels=config['channels'],
                                                     image_size=None,compressor=config['latent_mapping'],training=True,average=config['average_eeg'])
     combined_dataset = ConcatDataset([train_d, validation_d])
-    train_dataloader = DataLoader(combined_dataset, batch_size=config['batch_size'], shuffle=False)
+    train_dataloader = DataLoader(combined_dataset, batch_size=config['batch_size'], shuffle=True)
 
     # Set the random seed for reproducibility
     torch.manual_seed(config['seed'])
@@ -282,11 +284,13 @@ def main():
 
     # load pretrained model
     model_name = 'diffusion_prior' # 'diffusion_prior_vice_pre_imagenet' or 'diffusion_prior_vice_pre'
-    pipe.train(dl_train, num_epochs=config['epochs'], learning_rate=config['learning_rate']) # to 0.142     
+    pipe.train(dl_train, num_epochs=config['epochs'], learning_rate=config['learning_rate']) # to 0.142 
+    if config['save_model']:
         # Save the model weights
-    model_path=f"./models/DM_highlevel/{config['subject_id'][0]}"
-    os.makedirs(model_path, exist_ok=True)             
-    file_path = f"{model_path}/highlevel_DM.pth"
-    torch.save(pipe.diffusion_prior.state_dict(), file_path)
+        model_path=f"./models/DM_highlevel/{config['subject_id'][0]}"
+        os.makedirs(model_path, exist_ok=True)             
+        file_path = f"{model_path}/highlevel_DM.pth"
+        torch.save(pipe.diffusion_prior.state_dict(), file_path)
+
 if __name__ == '__main__':
     main()

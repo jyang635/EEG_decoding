@@ -11,13 +11,12 @@ import csv
 from diffusers.pipelines.stable_diffusion_xl.pipeline_stable_diffusion_xl import *
 from diffusion_prior import DiffusionPriorUNet, Pipe,EmbeddingDataset
 # from custom_pipeline_low_level import Generator4Embeds
-from custom_pipeline import generate_ip_adapter_embeds
+from custom_pipeline_low_level import generate_ip_adapter_embeds
 
 from ATMS_reconstruction import ATMS as ATMS_highlevel
-from EEG_low_level_encoders import Deconv_EEGConformer,encoder_low_level,encoder_low_level_channelwise,ATMS_Deconv,Config
+from EEG_low_level_encoders import encoder_low_level,encoder_low_level_channelwise,ATMS_Deconv,Config,EEGConformer_Deconv
 from EEG_ThingsData import load_multiple_subjects
 from EEG_Image_metrics import compute_metrics,save_model_results_to_csv
-from EEG_VAE_compare import VAE_reconstruction
 
 from torchvision import transforms
 # from PIL import Image
@@ -32,7 +31,7 @@ def extract_id_from_string(s):
 def extract_highlevel_embeddings(eegmodel, dataloader, device, subject_id=None):
     eegmodel.eval()
     eeg_embeddings=[]
-    image_list=[]
+    # image_list=[]
 
     with torch.no_grad():
         for batch_idx, (img, eeg_data) in enumerate(dataloader):            
@@ -42,17 +41,51 @@ def extract_highlevel_embeddings(eegmodel, dataloader, device, subject_id=None):
             subject_ids = torch.full((batch_size,), subject_ids, dtype=torch.long).to(device)
             eeg_features = eegmodel(eeg_data,subject_ids).float()
             eeg_embeddings.append(eeg_features.cpu())
-            image_list.append(img.cpu())
+            # image_list.append(img.cpu())
     
     eeg_embeddings = torch.cat(eeg_embeddings, dim=0)
-    image_list = torch.cat(image_list, dim=0)
+    # image_list = torch.cat(image_list, dim=0)
     torch.cuda.empty_cache()
-    return image_list,eeg_embeddings
+    return eeg_embeddings
 
-
-
-def FinalSDXL_reconstruction(highlevel_feature,lowlevel_image,DM_prior,SDXL_generator,device,image_size=(256, 256),guidance_scale=50.0):
+def VAE_reconstruction(eegmodel, dataloader, vae,device,image_size=(256, 256),model_type='ATMS_Deconv',subject_id=None):
+    eegmodel.eval()
     recon_list=[]
+    image_list=[]
+
+    with torch.no_grad():
+        for batch_idx, (img, eeg_data) in enumerate(dataloader):            
+            eeg_data = eeg_data.to(device)
+            if model_type.startswith('ATMS'):
+                subject_ids = extract_id_from_string(subject_id)
+                batch_size =eeg_data.size(0)
+                subject_ids = torch.full((batch_size,), subject_ids, dtype=torch.long).to(device)
+                eeg_features = eegmodel(eeg_data,subject_ids).float()
+            else:
+                eeg_features = eegmodel(eeg_data).float()
+            
+            image_list.append(img)
+            # z= eeg_features.to('cuda:1')
+            z= eeg_features.to(device)
+            x_rec = vae.decode(z).sample
+            recon_list.append(x_rec.cpu())
+            print(f"Batch {batch_idx+1}/{len(dataloader)} processed")
+            del z,x_rec
+            torch.cuda.empty_cache()
+    
+    recon_list = torch.cat(recon_list, dim=0)
+    
+    ### make sure the recon_list is in the range of 0-1
+    image_list = torch.cat(image_list, dim=0)
+    image_list=transforms.Resize(image_size)(image_list)
+    image_list=image_list.clamp(0,1)
+    # recon_list=positive_images(recon_list)
+    return image_list,recon_list
+
+
+def FinalSDXL_reconstruction(highlevel_feature,lowlevel_image,DM_prior,SDXL_generator,device,image_size=(256, 256),guidance_scale=8.0,img_strength=0.5):
+    recon_list=[]
+    print(f'Image strength: {img_strength}')
     with torch.no_grad():
         for i in range(highlevel_feature.shape[0]):
             # if i==3:
@@ -62,12 +95,13 @@ def FinalSDXL_reconstruction(highlevel_feature,lowlevel_image,DM_prior,SDXL_gene
             highlevel_ref = highlevel_feature[i].unsqueeze(0).to(device)
             # generator = Generator4Embeds(num_inference_steps=10, device=device, img2img_strength=0.85, 
             #                             low_level_image=ref_img, low_level_latent=None) 
-            h = DM_prior.generate(c_embeds=highlevel_ref, num_inference_steps=10, guidance_scale=guidance_scale)     
+            h = DM_prior.generate(c_embeds=highlevel_ref, num_inference_steps=50, guidance_scale=guidance_scale)
+            print(f"Highlevel {i+1}/{highlevel_feature.shape[0]} completed")     
             eeg_gen = SDXL_generator.generate_ip_adapter_embeds(prompt='',ip_adapter_embeds=h, 
-                                                      num_inference_steps=10,
+                                                      num_inference_steps=4,
                                                       guidance_scale=0.0,
                                                       generator=None,
-                                                        img2img_strength=0.85, 
+                                                        img2img_strength=img_strength, 
                                                         low_level_image=ref_img,
                                                         low_level_latent=None).images[0]
             eeg_gen=transforms.ToTensor()(eeg_gen).cpu()
@@ -107,6 +141,7 @@ def main():
     parser.add_argument('--image_size', type=str, default="256,256", help='size of the image'),
     parser.add_argument('--gpu', type=str, default='0', help='GPU to use')
     parser.add_argument('--average_eeg', action='store_true', help='Whether to average EEG data')
+    parser.add_argument('--img_strength', type=float, default=0.5, help='Strength of the image in the diffusion process')
     
     args = parser.parse_args()
 
@@ -133,7 +168,8 @@ def main():
                 "image_size": image_size,
                 "seed": args.seed,
                 'average_eeg': args.average_eeg,
-                "device": device
+                "device": device,
+                "img_strength": args.img_strength
             }
     # Load the EEG data and the image data
     EEG_dir = config['eeg_folder']
@@ -144,6 +180,12 @@ def main():
                                                     end_time=config['time_window'][1],desired_channels=config['channels'],
                                                     image_size=(config['image_size'][1],config['image_size'][2]),compressor=None,training=False,average=config['average_eeg'])
     test_loader = DataLoader(test_d, batch_size=config['batch_size'], shuffle=False)
+
+    test_highlevel_d,_ = load_multiple_subjects(subject_ids=config['subject_id'], eeg_dir=EEG_dir, img_dir=img_dir, 
+                                                    img_metadata=img_metadata, start_time=0.0, 
+                                                    end_time=1.0,desired_channels=['All'],
+                                                    image_size=(config['image_size'][1],config['image_size'][2]),compressor=None,training=False,average=config['average_eeg'])
+    highlevel_dataloader = DataLoader(test_highlevel_d, batch_size=config['batch_size'], shuffle=False)
 
     # Extract the high-level features from the eeg
     if config['channels'][0] == 'All':
@@ -162,9 +204,9 @@ def main():
     eeg_highlevel.to(device)
     eeg_highlevel.eval()
     #Get the high-level features
-    image_list, highlevel_embeddings = extract_highlevel_embeddings(eeg_highlevel, test_loader, device, subject_id=config['subject_id'][0])
+    highlevel_embeddings = extract_highlevel_embeddings(eeg_highlevel, highlevel_dataloader, device, subject_id=config['subject_id'][0])
     print(f"High-level embeddings obtained for {config['subject_id'][0]}")
-    del eeg_highlevel
+    del eeg_highlevel,highlevel_dataloader,test_highlevel_d
     torch.cuda.empty_cache()
 
     #Obtain the low-level images
@@ -176,7 +218,7 @@ def main():
     if config['model_type']== 'encoder_low_level':
         low_level_model = encoder_low_level(num_channels=n_channels, sequence_length=ntimes).to(device)
     elif config['model_type'] == 'EEGConformer':
-        low_level_model = Deconv_EEGConformer(n_outputs=2, n_chans=n_channels, n_filters_time=180, 
+        low_level_model = EEGConformer_Deconv(n_outputs=2, n_chans=n_channels, n_filters_time=90, 
                                     filter_time_length=20, pool_time_length=5, pool_time_stride=5, 
                                     drop_prob=0.5, att_depth=3, att_heads=30, att_drop_prob=0.5, 
                                     final_fc_length='auto', return_features=False, n_times=ntimes, 
@@ -190,7 +232,6 @@ def main():
     else:
         raise ValueError(f"Unknown model type: {config['model_type']}")
     
-
     path_modelstate=f"{config['model_path']}/low_level/{config['model_type']}/{config['subject_id'][0]}/C{n_channels}-{config['time_window'][1]}s-avg{config['average_eeg']}"
     matching_files = [f for f in os.listdir(path_modelstate) if f.startswith('model')][0]
     model_path = os.path.join(path_modelstate, matching_files)
@@ -211,7 +252,7 @@ def main():
     vae.requires_grad_(False)
     vae.eval()
     print(f"VAE loaded")
-    _,lowlevel_recon_list = VAE_reconstruction(low_level_model, test_loader,vae, device,image_size=(512,512),model_type=config['model_type'],subject_id=config['subject_id'][0])
+    image_list,lowlevel_recon_list = VAE_reconstruction(low_level_model, test_loader,vae, device,image_size=(256,256),model_type=config['model_type'],subject_id=config['subject_id'][0])
     print(f"Low-level reconstructions obtained for {config['model_type']} {config['subject_id'][0]}")
     del vae, low_level_model
     torch.cuda.empty_cache()
@@ -235,12 +276,12 @@ def main():
     generator_SDXL.set_ip_adapter_scale(1)
 
     # Get the GT images and the eeg embeddings
-    Final_recon_list = FinalSDXL_reconstruction(highlevel_embeddings,lowlevel_recon_list,pipe,generator_SDXL,device=device2,image_size=(256, 256),guidance_scale=50.0)
+    Final_recon_list = FinalSDXL_reconstruction(highlevel_embeddings,lowlevel_recon_list,pipe,generator_SDXL,device=device2,image_size=(256, 256),guidance_scale=50.0,img_strength=config['img_strength'])
     print(f"Final reconstructions obtained for {config['model_type']} {config['subject_id'][0]}")
 
 
     # Create a directory for the reconstructed images if it doesn't exist
-    recon_dir = os.path.join(config['model_path'], f"Final_reconstructions/{config['model_type']}/{config['subject_id'][0]}")
+    recon_dir = os.path.join(config['model_path'], f"Final_reconstructions/{config['model_type']}/img_strength_{config['img_strength']}/{config['subject_id'][0]}")
     os.makedirs(recon_dir, exist_ok=True)
     # Convert tensor images to PIL images and save them
     to_pil = T.ToPILImage()
@@ -255,21 +296,21 @@ def main():
 
     # print(f"Saved first 10 reconstructions to {recon_dir}")
 
-    for i in range(max(30, Final_recon_list.shape[0])):
+    for i in range(min(30, Final_recon_list.shape[0])):
         img = to_pil(Final_recon_list[i])
         img.save(os.path.join(recon_dir, f"recon_{i}.png"))
 
     # Also save the original images for comparison
-    for i in range(max(30, image_list.shape[0])):
-        img = to_pil(image_list[i])
-        img.save(os.path.join(recon_dir, f"original_{i}.png"))
+    # for i in range(max(30, image_list.shape[0])):
+    #     img = to_pil(image_list[i])
+    #     img.save(os.path.join(recon_dir, f"original_{i}.png"))
 
 
     # Compute the metrics
     metrics_results = compute_metrics(image_list, Final_recon_list,device)
 
     # Save the metrics to a CSV file
-    csv_file_path =os.path.join(config['model_path'], "Final_model_results.csv")
+    csv_file_path =os.path.join(config['model_path'], f"Final_model_results_strength{config['img_strength']}.csv")
     # save the first 5 reconstructions as PIL to model_path
     # Save the first 5 reconstructions as PIL images
 

@@ -13,32 +13,16 @@ import re
 
 # from diffusers.image_processor import VaeImageProcessor
 # from diffusers import AutoencoderKL
-# from diffusers.pipelines.stable_diffusion_xl.pipeline_stable_diffusion_xl import *
+# from EEG_diffusion_prior_lowlevel import DiffusionPriorUNet
 
 import argparse
 import datetime
 
-from EEG_low_level_encoders import Deconv_EEGConformer,encoder_low_level,encoder_low_level_channelwise,ATMS_Deconv,Config
+from EEG_low_level_encoders import EEGConformer_Deconv,encoder_low_level,encoder_low_level_channelwise,ATMS_Deconv,Config,EEGConformer_Deconv2
 from EEG_ThingsData import load_multiple_subjects
 
-os.environ["WANDB_MODE"] = 'online'
-# image_processor = VaeImageProcessor()
-# path = "stabilityai/stable-diffusion-xl-base-1.0"
-
-# vae = AutoencoderKL.from_pretrained(path, subfolder='vae').to(device)
-# device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
-# pipe = DiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float, variant="fp16")
 
 
-# if hasattr(pipe, 'vae'):
-#     for param in pipe.vae.parameters():
-#         param.requires_grad = False
-
-# vae = pipe.vae.to('cuda:1')
-
-
-# vae.requires_grad_(False)
-# vae.eval()
 
 def extract_id_from_string(s):
     match = re.search(r'\d+$', s)
@@ -53,7 +37,7 @@ def train_loop(dataloader, model, loss_fn, optimizer,device,subject_id=None,mode
 
     model.train()
     train_loss=0
-    if model_type == 'ATMS':
+    if model_type.startswith('ATMS'):
         for batch, (image,response)in enumerate(dataloader):
             image=image.to(device)
             subject_ids = extract_id_from_string(subject_id)
@@ -93,7 +77,7 @@ def val_loop(dataloader, model, loss_fn,device,subject_id=None,model_type='EEGco
     # Evaluating the model with torch.no_grad() ensures that no gradients are computed during test mode
     # also serves to reduce unnecessary gradient computations and memory usage for tensors with requires_grad=True
     with torch.no_grad():
-        if model_type == 'ATMS':
+        if model_type.startswith('ATMS'):
             for batch, (image,response)in enumerate(dataloader):
                 image=image.to(device)
                 subject_ids = extract_id_from_string(subject_id)
@@ -116,7 +100,7 @@ def val_loop(dataloader, model, loss_fn,device,subject_id=None,model_type='EEGco
     return val_loss
 
 def main_train_loop(eeg_model, train_dataloader, validation_dataloader, device, 
-                     config,n_channels,model_type='EEGconformer'):
+                     config,n_channels,model_type='EEGconformer',save_model=False):
     optimizer = torch.optim.AdamW(eeg_model.parameters(),lr=config['learning_rate'],weight_decay=config['weight_decay'])
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min')
     eeg_model.to(device)
@@ -127,7 +111,8 @@ def main_train_loop(eeg_model, train_dataloader, validation_dataloader, device,
 
     loss_dict = {
         'mse': nn.MSELoss(),
-        'mae': nn.L1Loss()
+        'mae': nn.L1Loss(),
+        'ssim': nn.MSELoss()
     }
     loss_fn = loss_dict.get(config['loss'], nn.MSELoss())
     if config['loss'] not in loss_dict.keys():
@@ -170,14 +155,15 @@ def main_train_loop(eeg_model, train_dataloader, validation_dataloader, device,
         scheduler.step(val_loss)
         lr = scheduler.get_last_lr()[0]
         print('Learning rate='+str(lr))
-    # Save the model weights
-    model_path=f"./models/low_level/{config['model_type']}/{sub}/C{n_channels}-{config['time_window'][1]}s-avg{config['average_eeg']}"
-    os.makedirs(model_path, exist_ok=True)             
-    file_path = f"{model_path}/best_model_epoch{best_epoch}.pth"
-    torch.save(best_model_check, file_path)
-    file_path = f"{model_path}/model_{config['epochs']}.pth"
-    torch.save(eeg_model.state_dict(), file_path)
-    print(f"model saved in {file_path}!")
+    if save_model:
+        # Save the model weights
+        model_path=f"./models/low_level/{config['model_type']}/{sub}/C{n_channels}-{config['time_window'][1]}s-avg{config['average_eeg']}"
+        os.makedirs(model_path, exist_ok=True)             
+        file_path = f"{model_path}/best_model_epoch{best_epoch}.pth"
+        torch.save(best_model_check, file_path)
+        file_path = f"{model_path}/model_{config['epochs']}.pth"
+        torch.save(eeg_model.state_dict(), file_path)
+        print(f"model saved in {file_path}!")
     wandb.finish()
 
 def main():
@@ -191,8 +177,9 @@ def main():
     parser.add_argument('--start_time', type=float, default=0.0, help='Start time for analysis window')
     parser.add_argument('--end_time', type=float, default=0.5, help='End time for analysis window')
     parser.add_argument('--batch_size', type=int, default=200, help='Batch size for training')
-    parser.add_argument('--model', type=str,choices=['encoder_low_level', 'encoder_low_level_channelwise', 'EEGConformer','ATMS'], default='EEGConformer')
-    parser.add_argument('--learning_rate', type=float, default=5e-5, help='Learning rate')
+    parser.add_argument('--model', type=str,choices=['encoder_low_level', 'encoder_low_level_channelwise',
+                                                      'EEGConformer','ATMS'], default='EEGConformer')
+    parser.add_argument('--learning_rate', type=float, default=1e-4, help='Learning rate')
     parser.add_argument('--weight_decay', type=float, default=5e-5, help='Weight decay')
     parser.add_argument('--epochs', type=int, default=50, help='Number of training epochs')
     parser.add_argument('--early_stopping', type=int, default=10, help='Early stopping patience')
@@ -202,9 +189,10 @@ def main():
     parser.add_argument('--channels', type=str, default='O1,Oz,O2', 
                         help='EEG channels to use (comma-separated)')
     parser.add_argument('--image_size', type=str, default="256,256", help='size of the image'),
-    parser.add_argument('--gpu', type=str, default='1', help='GPU to use')
+    parser.add_argument('--gpu', type=str, default='0', help='GPU to use')
     parser.add_argument('--average_eeg', action='store_true', help='Whether to average EEG data')
     parser.add_argument('--latent_mapping', default='VAE', help='Whether to use latent mapping')
+    parser.add_argument('--save_model', action='store_true', help='Whether to save the model')
     
     args = parser.parse_args()
     # Initialize wandb
@@ -232,7 +220,8 @@ def main():
                 "loss": args.loss,
                 'average_eeg': args.average_eeg,
                 "latent_mapping": args.latent_mapping,
-                "device": device
+                "device": device,
+                "save_model": args.save_model
             }
     
     EEG_dir = config['eeg_folder']
@@ -254,20 +243,27 @@ def main():
         n_channels = len(train_d[0][1])
     else:
         n_channels = len(config['channels'])
-    if config['model_type'] == 'encoder_low_level':
+    if config['model_type']== 'encoder_low_level':
         eeg_model = encoder_low_level(num_channels=n_channels, sequence_length=ntimes).to(device)
     elif config['model_type'] == 'EEGConformer':
-        eeg_model = Deconv_EEGConformer(n_outputs=2, n_chans=n_channels, n_filters_time=180, 
-                                  filter_time_length=20, pool_time_length=5, pool_time_stride=5, 
-                                  drop_prob=0.5, att_depth=3, att_heads=30, att_drop_prob=0.5, 
-                                  final_fc_length='auto', return_features=False, n_times=ntimes, 
-                                  chs_info=None, input_window_seconds=None, sfreq=None, n_classes=None, 
-                                  n_channels=None, input_window_samples=None).to(device)
+        eeg_model = EEGConformer_Deconv(n_outputs=2, n_chans=n_channels, n_filters_time=90, 
+                                    filter_time_length=20, pool_time_length=5, pool_time_stride=5, 
+                                    drop_prob=0.5, att_depth=3, att_heads=30, att_drop_prob=0.5, 
+                                    final_fc_length='auto', return_features=False, n_times=ntimes, 
+                                    chs_info=None, input_window_seconds=None, sfreq=None, n_classes=None, 
+                                    n_channels=None, input_window_samples=None).to(device)
     elif config['model_type'] == 'encoder_low_level_channelwise':
         eeg_model = encoder_low_level(num_channels=n_channels, sequence_length=ntimes).to(device)
     elif config['model_type'] == 'ATMS':
         ATM_config = Config(seq_len=ntimes,ATMoutput=1024)
         eeg_model=ATMS_Deconv(ATM_config)
+    # elif config['model_type'] == 'ATMS_Res_attention':
+    #     ATM_config = Config(seq_len=ntimes,ATMoutput=1024)
+    #     eeg_model=ATMS_Res_attention(ATM_config)
+    else:
+        raise ValueError(f"Unknown model type: {config['model_type']}")
+
+    print(f"Model type: {config['model_type']}")
         
 
     def init_wandb(project_name=config['project'], run_name=None,config=config):
@@ -284,7 +280,8 @@ def main():
 
     # exit()
     run = init_wandb(config=config)
-    main_train_loop(eeg_model, train_dataloader, validation_dataloader, device,config,n_channels,model_type=config['model_type'])
+    main_train_loop(eeg_model, train_dataloader, validation_dataloader, device,config,n_channels,
+                    model_type=config['model_type'],save_model=config['save_model'])
 if __name__ == '__main__':
         # Add this before your training loop
     # print(f"Config: {config['average_eeg']}")

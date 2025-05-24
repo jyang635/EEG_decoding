@@ -8,329 +8,382 @@ from tqdm import tqdm
 from diffusers.models.embeddings import Timesteps, TimestepEmbedding
 from torch.utils.data import Dataset
 
-class EmbeddingDataset(Dataset):
 
-    def __init__(self, c_embeddings, h_embeddings):
-        self.c_embeddings = c_embeddings
-        self.h_embeddings = h_embeddings
+# Original DiffusionPrior class remains commented out
+# ...existing code...
 
-    def __len__(self):
-        return len(self.c_embeddings)
+# class DiffusionPriorUNet(nn.Module):
 
-    def __getitem__(self, idx):
-        return {
-            "c_embedding": self.c_embeddings[idx],
-            "h_embedding": self.h_embeddings[idx]
-        }
+#     def __init__(
+#             self, 
+#             in_channels=4,  # Changed from embed_dim to in_channels for image data
+#             cond_channels=4,  # Changed from cond_dim to cond_channels
+#             hidden_dim=[64, 128, 256, 512, 1024],  # Reversed order for conv architecture
+#             time_embed_dim=512,
+#             act_fn=nn.SiLU,
+#             dropout=0.0,
+#             image_size=64,  # Added image size parameter
+#         ):
+#         super().__init__()
+        
+#         self.in_channels = in_channels
+#         self.cond_channels = cond_channels
+#         self.hidden_dim = hidden_dim
+#         self.image_size = image_size
 
-class DiffusionModel4x64x64(nn.Module):
-    """Diffusion model that processes and generates 4×64×64 image data"""
-    
+#         # 1. time embedding
+#         self.time_proj = Timesteps(time_embed_dim, True, 0)
+
+#         # 2. conditional embedding pathway (changed to Conv layers)
+#         self.cond_encoder = nn.Sequential(
+#             nn.Conv2d(cond_channels, hidden_dim[0], kernel_size=3, padding=1),
+#             nn.SiLU(),
+#             nn.Conv2d(hidden_dim[0], hidden_dim[0], kernel_size=3, padding=1),
+#         )
+
+#         # 3. UNet architecture
+
+#         # 3.1 input layer
+#         self.input_layer = nn.Sequential(
+#             nn.Conv2d(in_channels, hidden_dim[0], kernel_size=3, padding=1),
+#             nn.GroupNorm(8, hidden_dim[0]),
+#             act_fn(),
+#         )
+
+#         # 3.2 down blocks
+#         self.num_layers = len(hidden_dim)
+#         self.encode_time_embedding = nn.ModuleList(
+#             [TimestepEmbedding(
+#                 time_embed_dim,
+#                 hidden_dim[i],
+#             ) for i in range(self.num_layers-1)]
+#         )
+        
+#         # Replace linear layers with Conv2d for spatial data
+#         self.encode_layers = nn.ModuleList([
+#             nn.Module() for _ in range(self.num_layers-1)
+#         ])
+        
+#         for i in range(self.num_layers-1):
+#             self.encode_layers[i] = nn.Sequential(
+#                 nn.Conv2d(hidden_dim[i], hidden_dim[i+1], kernel_size=3, padding=1, stride=2),  # downsampling
+#                 nn.GroupNorm(8, hidden_dim[i+1]),
+#                 act_fn(),
+#                 nn.Dropout(dropout),
+#                 nn.Conv2d(hidden_dim[i+1], hidden_dim[i+1], kernel_size=3, padding=1),
+#                 nn.GroupNorm(8, hidden_dim[i+1]),
+#                 act_fn(),
+#                 nn.Dropout(dropout),
+#             )
+
+#         # 3.3 up blocks with skip connections
+#         self.decode_time_embedding = nn.ModuleList(
+#             [TimestepEmbedding(
+#                 time_embed_dim,
+#                 hidden_dim[i],
+#             ) for i in range(self.num_layers-1, 0, -1)]
+#         )
+        
+#         # Replace linear layers with ConvTranspose2d for upsampling
+#         self.decode_layers = nn.ModuleList([
+#             nn.Module() for _ in range(self.num_layers-1)
+#         ])
+        
+#         for i in range(self.num_layers-1):
+#             self.decode_layers[i] = nn.Sequential(
+#                 nn.Conv2d(hidden_dim[self.num_layers-1-i], hidden_dim[self.num_layers-1-i], kernel_size=3, padding=1),
+#                 nn.GroupNorm(8, hidden_dim[self.num_layers-1-i]),
+#                 act_fn(),
+#                 nn.Dropout(dropout),
+#                 nn.ConvTranspose2d(hidden_dim[self.num_layers-1-i], hidden_dim[self.num_layers-2-i], 
+#                                   kernel_size=4, stride=2, padding=1),  # upsampling
+#                 nn.GroupNorm(8, hidden_dim[self.num_layers-2-i]),
+#                 act_fn(),
+#                 nn.Dropout(dropout),
+#             )
+
+#         # 3.4 output layer
+#         self.output_layer = nn.Sequential(
+#             nn.Conv2d(hidden_dim[0], hidden_dim[0], kernel_size=3, padding=1),
+#             nn.GroupNorm(8, hidden_dim[0]),
+#             act_fn(),
+#             nn.Conv2d(hidden_dim[0], in_channels, kernel_size=3, padding=1)
+#         )
+        
+
+#     def forward(self, x, t, c=None):
+#         # x: (batch_size, in_channels, H, W)
+#         # t: (batch_size, )
+#         # c: (batch_size, cond_channels, H, W)
+
+#         # 1. time embedding
+#         t_emb = self.time_proj(t)  # (batch_size, time_embed_dim)
+
+#         # 2. process conditional input if provided
+#         cond_features = None
+#         if c is not None:
+#             cond_features = self.cond_encoder(c)
+
+#         # 3. UNet architecture
+
+#         # 3.1 input
+#         x = self.input_layer(x)
+#         if cond_features is not None:
+#             x = x + cond_features
+
+#         # 3.2 encoder path (down)
+#         skip_connections = []
+#         for i in range(self.num_layers-1):
+#             skip_connections.append(x)
+#             # Add time embedding as channel-wise information
+#             t_emb_i = self.encode_time_embedding[i](t_emb)
+#             # Reshape time embedding to add to all spatial locations
+#             t_emb_i = t_emb_i.unsqueeze(-1).unsqueeze(-1)
+#             x = x + t_emb_i
+#             # Apply convolutions and downsample
+#             x = self.encode_layers[i](x)
+        
+#         # 3.3 decoder path (up) with skip connections
+#         for i in range(self.num_layers-1):
+#             # Add time embedding
+#             t_emb_i = self.decode_time_embedding[i](t_emb)
+#             t_emb_i = t_emb_i.unsqueeze(-1).unsqueeze(-1)
+#             x = x + t_emb_i
+#             # Upsample and apply convolutions
+#             x = self.decode_layers[i](x)
+#             # Add skip connection
+#             x = x + skip_connections[-(i+1)]
+            
+#         # 3.4 output projection
+#         x = self.output_layer(x)
+
+#         return x
+class DiffusionPriorUNet(nn.Module):
+
     def __init__(
-            self,
-            channels=4,
-            image_size=(64, 64),
-            base_channels=64,
-            channel_multipliers=(1, 2, 4, 8),
-            time_embed_dim=256,
-            dropout=0.1,
-            num_res_blocks=2,
-            attention_resolutions=(8, 16),
-            use_scale_shift_norm=True
+            self, 
+            in_channels=4,
+            cond_channels=4,
+            hidden_dim=[64, 128, 256, 512, 1024],
+            time_embed_dim=512,
+            act_fn=nn.SiLU,
+            dropout=0.0,
+            image_size=64,
         ):
         super().__init__()
         
-        self.channels = channels
+        self.in_channels = in_channels
+        self.cond_channels = cond_channels
+        self.hidden_dim = hidden_dim
         self.image_size = image_size
-        
-        # Time embedding
+        self.num_layers = len(hidden_dim)
+
+        # 1. time embedding
         self.time_proj = Timesteps(time_embed_dim, True, 0)
-        time_embed_dim_out = time_embed_dim * 4
-        self.time_embedding = nn.Sequential(
-            nn.Linear(time_embed_dim, time_embed_dim_out),
-            nn.SiLU(),
-            nn.Linear(time_embed_dim_out, time_embed_dim_out),
+
+        # 2. Initial conditional embedding
+        self.cond_initial = nn.Sequential(
+            nn.Conv2d(cond_channels, hidden_dim[0], kernel_size=3, padding=1),
+            nn.GroupNorm(8, hidden_dim[0]),
+            act_fn(),
+        )
+
+        # 3. UNet architecture
+
+        # 3.1 input layer
+        self.input_layer = nn.Sequential(
+            nn.Conv2d(in_channels, hidden_dim[0], kernel_size=3, padding=1),
+            nn.GroupNorm(8, hidden_dim[0]),
+            act_fn(),
+        )
+
+        # 3.2 down blocks
+        self.encode_time_embedding = nn.ModuleList([
+            TimestepEmbedding(time_embed_dim, hidden_dim[i]) 
+            for i in range(self.num_layers-1)
+        ])
+        
+        # Encoder blocks - each one reduces spatial dimensions
+        self.encode_blocks = nn.ModuleList()
+        
+        for i in range(self.num_layers-1):
+            self.encode_blocks.append(nn.Sequential(
+                nn.Conv2d(hidden_dim[i], hidden_dim[i+1], kernel_size=3, padding=1, stride=2),
+                nn.GroupNorm(8, hidden_dim[i+1]),
+                act_fn(),
+                nn.Dropout(dropout),
+                nn.Conv2d(hidden_dim[i+1], hidden_dim[i+1], kernel_size=3, padding=1),
+                nn.GroupNorm(8, hidden_dim[i+1]),
+                act_fn(),
+                nn.Dropout(dropout),
+            ))
+        
+        # Condition downsamplers
+        self.cond_downsamplers = nn.ModuleList()
+        for i in range(self.num_layers-1):
+            self.cond_downsamplers.append(nn.Sequential(
+                nn.Conv2d(hidden_dim[i], hidden_dim[i+1], kernel_size=3, padding=1, stride=2),
+                nn.GroupNorm(8, hidden_dim[i+1]),
+                act_fn(),
+            ))
+
+        # 3.3 up blocks with skip connections
+        self.decode_time_embedding = nn.ModuleList([
+            TimestepEmbedding(time_embed_dim, hidden_dim[i]) 
+            for i in range(self.num_layers-1, 0, -1)
+        ])
+        
+        # Decoder blocks - each one increases spatial dimensions
+        self.decode_blocks = nn.ModuleList()
+        
+        for i in range(self.num_layers-1):
+            # Current level is num_layers-1-i
+            # Next level is num_layers-2-i
+            curr_level = self.num_layers-1-i
+            next_level = self.num_layers-2-i
+            
+            self.decode_blocks.append(nn.Sequential(
+                nn.Conv2d(hidden_dim[curr_level], hidden_dim[curr_level], kernel_size=3, padding=1),
+                nn.GroupNorm(8, hidden_dim[curr_level]),
+                act_fn(),
+                nn.Dropout(dropout),
+                nn.ConvTranspose2d(hidden_dim[curr_level], hidden_dim[next_level], 
+                                  kernel_size=4, stride=2, padding=1),
+                nn.GroupNorm(8, hidden_dim[next_level]),
+                act_fn(),
+                nn.Dropout(dropout),
+            ))
+
+        # 3.4 output layer
+        self.output_layer = nn.Sequential(
+            nn.Conv2d(hidden_dim[0], hidden_dim[0], kernel_size=3, padding=1),
+            nn.GroupNorm(8, hidden_dim[0]),
+            act_fn(),
+            nn.Conv2d(hidden_dim[0], in_channels, kernel_size=3, padding=1)
         )
         
-        # Conditioning branch (processes 4×64×64 input)
-        self.cond_encoder = nn.ModuleList([
-            nn.Conv2d(channels, base_channels, kernel_size=3, padding=1),
-            nn.GroupNorm(8, base_channels),
-            nn.SiLU(),
-        ])
-        
-        # Down blocks for conditioning
-        curr_res = image_size[0]
-        in_channels = base_channels
-        feature_maps = []
-        
-        for multiplier in channel_multipliers:
-            out_channels = base_channels * multiplier
-            
-            for _ in range(num_res_blocks):
-                self.cond_encoder.append(ResBlock(
-                    in_channels, 
-                    out_channels, 
-                    time_embed_dim=time_embed_dim_out, 
-                    dropout=dropout,
-                    use_scale_shift_norm=use_scale_shift_norm
-                ))
-                in_channels = out_channels
-                if curr_res in attention_resolutions:
-                    self.cond_encoder.append(AttentionBlock(in_channels))
-                feature_maps.append((curr_res, in_channels))
-            
-            if multiplier != channel_multipliers[-1]:
-                self.cond_encoder.append(Downsample(in_channels))
-                curr_res //= 2
-                feature_maps.append((curr_res, in_channels))
-        
-        # Middle block for conditioning
-        self.cond_middle = nn.ModuleList([
-            ResBlock(in_channels, in_channels, time_embed_dim=time_embed_dim_out, dropout=dropout),
-            AttentionBlock(in_channels),
-            ResBlock(in_channels, in_channels, time_embed_dim=time_embed_dim_out, dropout=dropout),
-        ])
-        
-        # Main branch (processes input noise to predict output)
-        self.input_blocks = nn.ModuleList([
-            nn.Conv2d(channels, base_channels, kernel_size=3, padding=1)
-        ])
-        
-        # Down blocks
-        curr_res = image_size[0]
-        in_channels = base_channels
-        feature_maps = []
-        
-        for multiplier in channel_multipliers:
-            out_channels = base_channels * multiplier
-            
-            for _ in range(num_res_blocks):
-                self.input_blocks.append(ResBlock(
-                    in_channels, 
-                    out_channels, 
-                    time_embed_dim=time_embed_dim_out, 
-                    dropout=dropout,
-                    use_scale_shift_norm=use_scale_shift_norm
-                ))
-                in_channels = out_channels
-                if curr_res in attention_resolutions:
-                    self.input_blocks.append(AttentionBlock(in_channels))
-                feature_maps.append((curr_res, in_channels))
-            
-            if multiplier != channel_multipliers[-1]:
-                self.input_blocks.append(Downsample(in_channels))
-                curr_res //= 2
-                feature_maps.append((curr_res, in_channels))
-        
-        # Middle block
-        self.middle_block = nn.ModuleList([
-            ResBlock(in_channels, in_channels, time_embed_dim=time_embed_dim_out, dropout=dropout),
-            AttentionBlock(in_channels),
-            ResBlock(in_channels, in_channels, time_embed_dim=time_embed_dim_out, dropout=dropout),
-        ])
-        
-        # Up blocks
-        self.output_blocks = nn.ModuleList([])
-        
-        for i, multiplier in enumerate(reversed(channel_multipliers)):
-            out_channels = base_channels * multiplier
-            
-            for j in range(num_res_blocks + 1):
-                skip_channels = feature_maps.pop()[1]
-                self.output_blocks.append(ResBlock(
-                    in_channels + skip_channels,
-                    out_channels,
-                    time_embed_dim=time_embed_dim_out,
-                    dropout=dropout,
-                    use_scale_shift_norm=use_scale_shift_norm
-                ))
-                in_channels = out_channels
-                if curr_res in attention_resolutions:
-                    self.output_blocks.append(AttentionBlock(in_channels))
-                
-                if i < len(channel_multipliers) - 1 and j == num_res_blocks:
-                    self.output_blocks.append(Upsample(in_channels))
-                    curr_res *= 2
-        
-        # Final output
-        self.out = nn.Sequential(
-            nn.GroupNorm(8, in_channels),
-            nn.SiLU(),
-            nn.Conv2d(in_channels, channels, kernel_size=3, padding=1),
-        )
-        
-    def forward(self, x, t, cond=None):
-        """
-        x: (B, 4, 64, 64) - Noisy input image
-        t: (B,) - Timesteps
-        cond: (B, 4, 64, 64) - Conditioning image
-        """
-        # Time embedding
-        t_emb = self.time_proj(t)
-        t_emb = self.time_embedding(t_emb)
-        
-        # Process conditioning image if provided
-        cond_features = None
-        if cond is not None:
-            h = cond
-            for module in self.cond_encoder:
-                h = module(h, t_emb) if isinstance(module, ResBlock) else module(h)
-            
-            for module in self.cond_middle:
-                h = module(h, t_emb) if isinstance(module, ResBlock) else module(h)
-                
-            cond_features = h
-        
-        # Process input with conditioning
-        h = x
-        skips = []
-        
-        # Down path
-        for module in self.input_blocks:
-            if isinstance(module, ResBlock):
-                h = module(h, t_emb)
-            else:
-                h = module(h)
-            skips.append(h)
-        
-        # Add conditioning features at the bottleneck
-        if cond_features is not None:
-            h = h + cond_features
-            
-        # Middle
-        for module in self.middle_block:
-            if isinstance(module, ResBlock):
-                h = module(h, t_emb)
-            else:
-                h = module(h)
-        
-        # Up path with skip connections
-        for module in self.output_blocks:
-            if isinstance(module, ResBlock):
-                h = torch.cat([h, skips.pop()], dim=1)
-                h = module(h, t_emb)
-            elif isinstance(module, Upsample):
-                h = module(h)
-            else:
-                h = module(h)
-        
-        # Final output
-        return self.out(h)
+    def forward(self, x, t, c=None):
+        # x: (batch_size, in_channels, H, W)
+        # t: (batch_size, )
+        # c: (batch_size, cond_channels, H, W)
 
+        # 1. time embedding
+        t_emb = self.time_proj(t)  # (batch_size, time_embed_dim)
 
-# Helper modules for the diffusion model
-class ResBlock(nn.Module):
-    """Residual block with time conditioning"""
-    
-    def __init__(self, in_channels, out_channels, time_embed_dim, dropout, use_scale_shift_norm=False):
-        super().__init__()
-        self.norm1 = nn.GroupNorm(8, in_channels)
-        self.act1 = nn.SiLU()
-        self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size=3, padding=1)
-        
-        self.norm2 = nn.GroupNorm(8, out_channels)
-        self.act2 = nn.SiLU()
-        self.dropout = nn.Dropout(dropout)
-        self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1)
-        
-        self.time_emb_proj = nn.Linear(time_embed_dim, out_channels * (2 if use_scale_shift_norm else 1))
-        self.use_scale_shift_norm = use_scale_shift_norm
-        
-        if in_channels != out_channels:
-            self.shortcut = nn.Conv2d(in_channels, out_channels, kernel_size=1)
+        # 2. process conditional input
+        cond_features = []
+        if c is not None:
+            # Process the initial conditioning
+            cond = self.cond_initial(c)
+            cond_features.append(cond)
+            
+            # Generate conditioning at different resolutions
+            for i in range(self.num_layers-1):
+                cond = self.cond_downsamplers[i](cond)
+                cond_features.append(cond)
         else:
-            self.shortcut = nn.Identity()
-    
-    def forward(self, x, time_emb):
-        h = self.act1(self.norm1(x))
-        h = self.conv1(h)
+            # No conditioning - use zeros or None
+            cond_features = [None] * self.num_layers
+
+        # 3. UNet architecture
+
+        # 3.1 input
+        x = self.input_layer(x)
         
-        # Time embedding
-        time_emb = self.time_emb_proj(time_emb).unsqueeze(-1).unsqueeze(-1)
-        
-        if self.use_scale_shift_norm:
-            scale, shift = torch.chunk(time_emb, 2, dim=1)
-            h = self.norm2(h) * (1 + scale) + shift
-            h = self.act2(h)
-        else:
-            h = self.act2(self.norm2(h + time_emb))
+        # Apply first level conditioning if available
+        if cond_features[0] is not None:
+            x = x + cond_features[0]
+
+        # 3.2 encoder path (down) with skip connections
+        skip_connections = []
+        for i in range(self.num_layers-1):
+            # Store for skip connection
+            skip_connections.append(x)
             
-        h = self.dropout(h)
-        h = self.conv2(h)
+            # Add time embedding
+            t_emb_i = self.encode_time_embedding[i](t_emb)
+            t_emb_i = t_emb_i.unsqueeze(-1).unsqueeze(-1)
+            x = x + t_emb_i
+            
+            # Apply convolution block (decreases resolution)
+            x = self.encode_blocks[i](x)
+            
+            # Add conditioning at this resolution level
+            if cond_features[i+1] is not None:
+                x = x + cond_features[i+1]
         
-        return h + self.shortcut(x)
+        # 3.3 decoder path (up) with skip connections
+        for i in range(self.num_layers-1):
+            # Add time embedding
+            t_emb_i = self.decode_time_embedding[i](t_emb)
+            t_emb_i = t_emb_i.unsqueeze(-1).unsqueeze(-1)
+            x = x + t_emb_i
+            
+            # Apply convolution and upsampling
+            x = self.decode_blocks[i](x)
+            
+            # Add skip connection from corresponding encoder level
+            # Note: num_layers-2-i goes from deep to shallow in the encoder
+            x = x + skip_connections[-(i+1)]
+            
+            # Add conditioning from the corresponding level in the encoder path
+            # This matches the skip connection level
+            idx = self.num_layers-2-i
+            if idx >= 0 and cond_features[idx] is not None:
+                x = x + cond_features[idx]
+            
+        # 3.4 output projection
+        x = self.output_layer(x)
 
+        return x
 
-class AttentionBlock(nn.Module):
-    """Self-attention block"""
+class ImageDataset(Dataset):
+    """Dataset for 4×64×64 images and their conditioning images"""
     
-    def __init__(self, channels):
-        super().__init__()
-        self.channels = channels
-        self.norm = nn.GroupNorm(8, channels)
-        self.qkv = nn.Conv2d(channels, channels * 3, kernel_size=1)
-        self.proj = nn.Conv2d(channels, channels, kernel_size=1)
+    def __init__(self, target_images, condition_images=None):
+        """
+        Args:
+            target_images: Tensor of shape (N, 4, 64, 64)
+            condition_images: Optional tensor of shape (N, 4, 64, 64)
+        """
+        self.target_images = target_images
+        self.condition_images = condition_images
+
+    def __len__(self):
+        return len(self.target_images)
+
+    def __getitem__(self, idx):
+        item = {
+            "target_image": self.target_images[idx],
+        }
         
-    def forward(self, x):
-        b, c, h, w = x.shape
-        qkv = self.qkv(self.norm(x))
-        q, k, v = qkv.chunk(3, dim=1)
-        
-        # Reshape for attention
-        q = q.reshape(b, c, -1).permute(0, 2, 1)  # (b, hw, c)
-        k = k.reshape(b, c, -1)  # (b, c, hw)
-        v = v.reshape(b, c, -1).permute(0, 2, 1)  # (b, hw, c)
-        
-        # Attention
-        scale = 1.0 / math.sqrt(c)
-        attn = torch.bmm(q, k) * scale  # (b, hw, hw)
-        attn = F.softmax(attn, dim=-1)
-        
-        # Apply attention to value projection
-        h = torch.bmm(attn, v)  # (b, hw, c)
-        h = h.permute(0, 2, 1).reshape(b, c, h, w)
-        
-        return x + self.proj(h)
+        if self.condition_images is not None:
+            item["condition_image"] = self.condition_images[idx]
+            
+        return item
 
 
-class Upsample(nn.Module):
-    """Upsample module"""
+# Keep the original EmbeddingDataset class
+# ...existing code...
+
+# Modify the Pipe class to work with images
+class Pipe:
     
-    def __init__(self, channels):
-        super().__init__()
-        self.conv = nn.Conv2d(channels, channels, kernel_size=3, padding=1)
-        
-    def forward(self, x):
-        x = F.interpolate(x, scale_factor=2, mode="nearest")
-        return self.conv(x)
-
-
-class Downsample(nn.Module):
-    """Downsample module"""
-    
-    def __init__(self, channels):
-        super().__init__()
-        self.conv = nn.Conv2d(channels, channels, kernel_size=3, stride=2, padding=1)
-        
-    def forward(self, x):
-        return self.conv(x)
-    
-class Pipe4x64x64:
-    def __init__(self, diffusion_model=None, scheduler=None, device='cuda'):
-        self.diffusion_prior = diffusion_model.to(device) if diffusion_model else DiffusionModel4x64x64().to(device)
+    def __init__(self, diffusion_prior=None, scheduler=None, device='cuda'):
+        self.diffusion_prior = diffusion_prior.to(device)
         
         if scheduler is None:
             from diffusers.schedulers import DDPMScheduler
-            self.scheduler = DDPMScheduler()
+            self.scheduler = DDPMScheduler() 
         else:
             self.scheduler = scheduler
             
         self.device = device
+        
     def train(self, dataloader, num_epochs=10, learning_rate=1e-4):
         self.diffusion_prior.train()
         device = self.device
-        criterion = nn.MSELoss(reduction='none')
+        criterion = nn.MSELoss()
         optimizer = optim.Adam(self.diffusion_prior.parameters(), lr=learning_rate)
         from diffusers.optimization import get_cosine_schedule_with_warmup
         lr_scheduler = get_cosine_schedule_with_warmup(
@@ -344,101 +397,108 @@ class Pipe4x64x64:
         for epoch in range(num_epochs):
             loss_sum = 0
             for batch in dataloader:
-                c_embeds = batch['c_embedding'].to(device) if 'c_embedding' in batch.keys() else None
-                h_embeds = batch['h_embedding'].to(device)
-                N = h_embeds.shape[0]
+                c_images = batch['condition_image'].to(device) if 'condition_image' in batch.keys() else None
+                target_images = batch['target_image'].to(device)
+                N = target_images.shape[0]
 
-                # 1. randomly replecing c_embeds to None
-                if torch.rand(1) < 0.1:
-                    c_embeds = None
+                # 1. randomly replacing c_images with None for unconditional training
+                if c_images is not None and torch.rand(1) < 0.1:
+                    c_images = None
 
-                # 2. Generate noisy embeddings as input
-                noise = torch.randn_like(h_embeds)
+                # 2. Generate noisy images as input
+                noise = torch.randn_like(target_images)
 
                 # 3. sample timestep
                 timesteps = torch.randint(0, num_train_timesteps, (N,), device=device)
 
-                # 4. add noise to h_embedding
-                perturbed_h_embeds = self.scheduler.add_noise(
-                    h_embeds,
+                # 4. add noise to target images
+                noisy_images = self.scheduler.add_noise(
+                    target_images,
                     noise,
                     timesteps
-                ) # (batch_size, embed_dim), (batch_size, )
+                )
 
                 # 5. predict noise
-                noise_pre = self.diffusion_prior(perturbed_h_embeds, timesteps, c_embeds)
+                noise_pred = self.diffusion_prior(noisy_images, timesteps, c_images)
                 
-                # 6. loss function weighted by sigma
-                loss = criterion(noise_pre, noise) # (batch_size,)
-                loss = (loss).mean()
+                # 6. loss function
+                loss = criterion(noise_pred, noise)
+                # loss = loss.mean()
                             
                 # 7. update parameters
                 optimizer.zero_grad()
                 loss.backward()
                 torch.nn.utils.clip_grad_norm_(self.diffusion_prior.parameters(), 1.0)
-                lr_scheduler.step()
                 optimizer.step()
+                lr_scheduler.step()
 
                 loss_sum += loss.item()
 
             loss_epoch = loss_sum / len(dataloader)
             print(f'epoch: {epoch}, loss: {loss_epoch}')
+
     def generate(
             self, 
-            cond_image=None,
+            c_images=None, 
             num_inference_steps=50, 
             timesteps=None,
             guidance_scale=5.0,
-            generator=None
+            generator=None,
+            batch_size=1,
+            image_size=64
         ):
-        """
-        Generate a 4×64×64 image conditioned on another 4×64×64 image
+        # c_images: (batch_size, cond_channels, H, W)
+        self.diffusion_prior.eval()
         
-        Args:
-            cond_image: (B, 4, 64, 64) conditioning image
-            num_inference_steps: Number of denoising steps
-            timesteps: Optional custom timesteps
-            guidance_scale: Classifier-free guidance scale
-            generator: Random number generator
-        """
-        self.diffusion_model.eval()
-        
-        # Prepare conditioning
-        if cond_image is not None:
-            cond_image = cond_image.to(self.device)
-            batch_size = cond_image.shape[0]
+        # Handle batch size and device placement
+        if c_images is not None:
+            N = c_images.shape[0]
+            c_images = c_images.to(self.device)
         else:
-            batch_size = 1
-        
-        # Prepare timesteps
+            N = batch_size
+
+        # 1. Prepare timesteps
         from diffusers.pipelines.stable_diffusion_xl.pipeline_stable_diffusion_xl import retrieve_timesteps
         timesteps, num_inference_steps = retrieve_timesteps(self.scheduler, num_inference_steps, self.device, timesteps)
-        
-        # Prepare initial noise
-        x_t = torch.randn(batch_size, 4, 64, 64, generator=generator, device=self.device)
-        
-        # Denoising loop
+
+        # 2. Prepare initial noise
+        h_t = torch.randn(
+            N, 
+            self.diffusion_prior.in_channels, 
+            image_size, 
+            image_size, 
+            generator=generator, 
+            device=self.device
+        )
+
+        # 3. denoising loop
         for _, t in tqdm(enumerate(timesteps)):
-            t_batch = torch.ones(batch_size, dtype=torch.long, device=self.device) * t
+            t_batch = torch.ones(N, dtype=torch.long, device=self.device) * t
             
-            # For classifier-free guidance, run with and without conditioning
-            if guidance_scale > 1.0 and cond_image is not None:
-                # With conditioning
-                with torch.no_grad():
-                    noise_pred_cond = self.diffusion_model(x_t, t_batch, cond_image)
-                
-                # Without conditioning
-                with torch.no_grad():
-                    noise_pred_uncond = self.diffusion_model(x_t, t_batch, None)
-                
-                # Apply classifier-free guidance
-                noise_pred = noise_pred_uncond + guidance_scale * (noise_pred_cond - noise_pred_uncond)
+            # 3.1 noise prediction
+            if guidance_scale == 0 or c_images is None:
+                noise_pred = self.diffusion_prior(h_t, t_batch)
             else:
-                # Standard inference
-                with torch.no_grad():
-                    noise_pred = self.diffusion_model(x_t, t_batch, cond_image)
-            
-            # Update sample with scheduler
-            x_t = self.scheduler.step(noise_pred, t.long().item(), x_t, generator=generator).prev_sample
+                # Classifier-free guidance approach
+                noise_pred_cond = self.diffusion_prior(h_t, t_batch, c_images)
+                noise_pred_uncond = self.diffusion_prior(h_t, t_batch)
+                # Perform guidance
+                noise_pred = noise_pred_uncond + guidance_scale * (noise_pred_cond - noise_pred_uncond)
+
+            # 3.2 compute the previous noisy sample h_t -> h_{t-1}
+            h_t = self.scheduler.step(noise_pred, t.long().item(), h_t, generator=generator).prev_sample
         
-        return x_t  # Shape: (B, 4, 64, 64)
+        return h_t
+
+
+if __name__ == '__main__':
+    import os
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    
+    # Test the modified model with 4×64×64 images
+    prior = DiffusionPriorUNet(in_channels=4, cond_channels=4)
+    x = torch.randn(2, 4, 64, 64)  # 2 images with 4 channels, 64×64 resolution
+    t = torch.randint(0, 1000, (2,))
+    c = torch.randn(2, 4, 64, 64)  # Conditioning images
+    y = prior(x, t, c)
+    print(y.shape)  # Should output: torch.Size([2, 4, 64, 64])

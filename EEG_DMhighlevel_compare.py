@@ -173,7 +173,7 @@ def main():
     #     img = to_pil(image_list[i])
     #     img.save(os.path.join(recon_dir, f"original_{i}.png"))
 
-    print(f"Saved first 10 reconstructions to {recon_dir}")
+    print(f"Saved first 30 reconstructions to {recon_dir}")
 
     metrics_results = compute_metrics(image_list, recon_list,device)
 
