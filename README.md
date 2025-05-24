@@ -33,7 +33,7 @@ source venv/bin/activate
 # On Windows:
 venv\Scripts\activate -->
 
-# Install required packages
+### Install required packages
 ```bash
 pip install wandb
 pip install einops
