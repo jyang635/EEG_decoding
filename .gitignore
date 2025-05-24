@@ -12,5 +12,6 @@ Inhouse*
 Loop*
 *.out
 wandb
+nohup*
 Figures
 04-23*
