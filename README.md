@@ -83,8 +83,8 @@ bash EEG_stage1_lowlevel.sh --gpu 0 --data_path [your EEG path] --save_model
 
 ## 4. Metric Computation
 
-### Evaluation on Test Set
-
+### Evaluation on Test Datasets
+These scripts will create csv files that store the configuration and the metric values across models and subjects. And the first 30 reconstructions will also be saved.
 ```bash
 # Low-level reconstruction
 bash EEG_lowlevel_metrics.sh
@@ -96,59 +96,12 @@ bash EEG_highlevel_metrics.sh
 bash EEG_final_metrics.sh
 ```
 
-### Results Format
-
-Results are saved in JSON format:
-
-```json
-{
-  "test_accuracy": 0.945,
-  "test_f1_score": 0.932,
-  "test_precision": 0.941,
-  "test_recall": 0.923,
-  "per_class_metrics": {
-    "class_1": {"precision": 0.95, "recall": 0.92, "f1": 0.93},
-    "class_2": {"precision": 0.93, "recall": 0.94, "f1": 0.93}
-  }
-}
-```
-
-## Reproducing Paper Results
-
-To reproduce the main results from the paper:
-
-```bash
-# Run full experimental pipeline
-bash scripts/reproduce_results.sh
-
-# Or run individual experiments
-python train.py --config configs/paper_experiment_1.yaml
-python train.py --config configs/paper_experiment_2.yaml
-```
-
-## Pre-trained Models
-
-Download pre-trained models:
-
-```bash
-# Download all pre-trained models
-python scripts/download_models.py
-
-# Download specific model
-python scripts/download_models.py --model model_name
-```
-
-| Model | Dataset | Accuracy | Download |
-|-------|---------|----------|----------|
-| Model A | Dataset 1 | 94.5% | [Link](link_to_model) |
-| Model B | Dataset 2 | 92.3% | [Link](link_to_model) |
-
 ## Citation
 
 If you find this work useful, please cite our paper:
 
 ```bibtex
-@article{your_paper_2024,
+@article{your_paper_2025,
   title={Your Paper Title},
   author={Author1, Author2, Author3},
   journal={Journal/Conference Name},
