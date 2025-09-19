@@ -101,11 +101,11 @@ bash EEG_final_metrics.sh
 If you find this work useful, please cite our paper:
 
 ```bibtex
-@article{your_paper_2025,
-  title={Your Paper Title},
-  author={Author1, Author2, Author3},
-  journal={Journal/Conference Name},
-  year={2024}
+@article{On the Role of Low-Level Visual Features in EEG-Based Image Reconstruction,
+  title={On the Role of Low-Level Visual Features in EEG-Based Image Reconstruction},
+  author={Junkai Yang, Arno Onken},
+  journal={MLSP},
+  year={2025}
 }
 ```
 
@@ -117,7 +117,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions or issues, please:
 - Open an issue on GitHub
-- Contact: [your.email@domain.com]
+- Contact: [s2560450@ed.ac.uk]
 
 ## Acknowledgments
 
