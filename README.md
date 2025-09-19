@@ -96,19 +96,6 @@ bash EEG_highlevel_metrics.sh
 bash EEG_final_metrics.sh
 ```
 
-## Citation
-
-If you find this work useful, please cite our paper:
-
-```bibtex
-@article{On the Role of Low-Level Visual Features in EEG-Based Image Reconstruction,
-  title={On the Role of Low-Level Visual Features in EEG-Based Image Reconstruction},
-  author={Junkai Yang, Arno Onken},
-  journal={MLSP},
-  year={2025}
-}
-```
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
