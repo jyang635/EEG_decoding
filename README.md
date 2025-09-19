@@ -118,8 +118,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For questions or issues, please:
 - Open an issue on GitHub
 - Contact: [s2560450@ed.ac.uk]
-
-## Acknowledgments
-
-- [Any acknowledgments or credits]
-- [Links to related work or dependencies]
