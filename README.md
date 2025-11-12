@@ -44,8 +44,7 @@ pip install braindecode==0.8.1
 ```
 
 ## 2. Downloading Data
-In this study, we directly used the preprocessed EEG data and the VAE latents provided by [Li et al.](https://arxiv.org/abs/2403.07721#:~:text=In%20this%20study%2C%20we%20present%20an%20end-to-end%20EEG-based,embedding%2C%20and%20a%20two-stage%20multi-pipe%20EEG-to-image%20generation%20strategy.), 
-which can be downloaded on their [Huggingface](https://huggingface.co/datasets/LidongYang/EEG_Image_decode).
+In this study, we directly used the preprocessed EEG data and the VAE latents provided by [Li et al.](https://arxiv.org/abs/2403.07721#:~:text=In%20this%20study%2C%20we%20present%20an%20end-to-end[...] which can be downloaded on their [Huggingface](https://huggingface.co/datasets/LidongYang/EEG_Image_decode).
 The raw visual stimuli can be downloaded on [OSF](https://osf.io/3jk45/).
 
 ### Data Structure
@@ -95,6 +94,52 @@ bash EEG_highlevel_metrics.sh
 # Two-level reconstruction
 bash EEG_final_metrics.sh
 ```
+
+## Citation
+
+The paper for this code has been published. Please cite the published version (DOI: 10.1109/MLSP62443.2025.11204210) when using this code or the reported results.
+
+Suggested citation (plain text):
+On the Role of Low-Level Visual Features in EEG-Based Image Reconstruction. J. Yang et al., 2025. IEEE MLSP. DOI: 10.1109/MLSP62443.2025.11204210
+
+BibTeX template for this work (published):
+```bibtex
+@inproceedings{yang2025_lowlevel_eeg,
+  title = {On the Role of Low-Level Visual Features in EEG-Based Image Reconstruction},
+  author = {Yang, J. and Coauthor, A. and Coauthor, B.},
+  booktitle = {Proceedings of the 2025 IEEE International Workshop on Machine Learning for Signal Processing (MLSP)},
+  year = {2025},
+  doi = {10.1109/MLSP62443.2025.11204210},
+  url = {https://doi.org/10.1109/MLSP62443.2025.11204210},
+  note = {Code: https://github.com/jyang635/EEG_decoding}
+}
+```
+
+If you used the preprocessed EEG data and VAE latents provided by the external dataset, please cite the original dataset and paper as well. Example entries:
+
+Hugging Face dataset (EEG_Image_decode)
+```bibtex
+@misc{lidongyang_eeg_image_decode_2024,
+  title = {EEG_Image_decode},
+  author = {Lidong Yang},
+  year = {2024},
+  howpublished = {Hugging Face Dataset},
+  url = {https://huggingface.co/datasets/LidongYang/EEG_Image_decode}
+}
+```
+
+ArXiv reference for the dataset / preprocessing (as linked in this README)
+```bibtex
+@misc{dataset_arxiv_2403_07721,
+  title = {Title of the arXiv paper (replace with actual title)},
+  author = {Authors (replace with actual author list)},
+  year = {2024},
+  note = {arXiv:2403.07721},
+  url = {https://arxiv.org/abs/2403.07721}
+}
+```
+
+If you'd like, provide the final publication details (full author list, venue name if different, year) and I can update the BibTeX entries accordingly.
 
 ## License
 
